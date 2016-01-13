@@ -122,3 +122,7 @@ class SM_File:
 
     def getLCOM(self):
         return SourceModel.SM_LCOM.getLCOM(self.resourceBodyText)
+
+    def getBodyTextSize(self):
+        loc = self.getLinesOfCode()
+        return loc, len(self.resourceBodyText)

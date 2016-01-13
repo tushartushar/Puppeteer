@@ -33,3 +33,20 @@ class SM_Class(SourceModel.SM_Element.SM_Element):
 
     def getLCOM(self):
         return SourceModel.SM_LCOM.getLCOM(self.resourceBodyText)
+
+    def getBodyTextSize(self):
+        loc = self.getLoc()
+        return loc, len(self.resourceBodyText)
+
+    def getLoc(self):
+        counter = self.countEntityDeclaration(SMCONSTS.LOC_REGEX, "newLine")
+        if counter > 0:
+            return counter+1
+
+        if (len(self.resourceBodyText) > 0):
+            return 1
+        return 0
+
+    def countEntityDeclaration(self, regEx, entityType):
+        compiledRE = re.compile(regEx)
+        return len(compiledRE.findall(self.resourceBodyText))

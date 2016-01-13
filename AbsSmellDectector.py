@@ -15,7 +15,7 @@ def detectMultifacetedAbs(folder, outputFile):
     detectMultifacetedAbsForm2(folder, outputFile)
 
 def detectUnnecessaryAbs(folder, outputFile):
-    pass
+    detectUnnAbs(folder, outputFile)
 
 def detectImperativeAbs(folder, outputFile):
     pass
@@ -81,3 +81,31 @@ def detectMulAbsInDefine(fileObj, outputFile):
 def detectMulAbsInModule(fileObj, outputFile):
     if fileObj.getLCOM() < CONSTS.LCOM_THRESHOLD:
         Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_MUL_ABS_2, CONSTS.FILE_RES)
+
+def detectUnnAbs(folder, outputFile):
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith(".pp"):
+                fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
+                detectUnnAbsInClasses(fileObj, outputFile)
+                detectUnnAbsInDefine(fileObj, outputFile)
+                detectUnnAbsInModules(fileObj, outputFile)
+
+def detectUnnAbsInClasses(fileObj, outputFile):
+    classList = fileObj.getClassDeclarationList()
+    for aClass in classList:
+        lineCount, textSizeCount = aClass.getBodyTextSize()
+        if lineCount < CONSTS.LOC_THRESHOLD_UNNABS and textSizeCount < CONSTS.SIZE_THRESHOLD_UNNABS:
+            Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_UNN_ABS, CONSTS.CLASS_RES)
+
+def detectUnnAbsInDefine(fileObj, outputFile):
+    defineList = fileObj.getDefineDeclarationList()
+    for aDefine in defineList:
+        lineCount, textSizeCount = aDefine.getBodyTextSize()
+        if lineCount < CONSTS.LOC_THRESHOLD_UNNABS and textSizeCount < CONSTS.SIZE_THRESHOLD_UNNABS:
+            Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_UNN_ABS, CONSTS.DEFINE_RES)
+
+def detectUnnAbsInModules(fileObj, outputFile):
+    lineCount, textSizeCount = fileObj.getBodyTextSize()
+    if lineCount < CONSTS.LOC_THRESHOLD_UNNABS and textSizeCount < CONSTS.SIZE_THRESHOLD_UNNABS:
+        Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_UNN_ABS, CONSTS.DEFINE_RES)

@@ -10,6 +10,7 @@ def aggregate(folder, name, outFile):
     execCount = 0
     LOCCount = 0
     multiAbsSmell = 0
+    unnAbsSmell = 0
     with open(folder + "/" + CONSTS.PUPPETEER_OUT_FILE, 'rt', errors='ignore') as curFile:
         for line in curFile:
             fileCountIndex = line.find(CONSTS.PUPPET_FILE_COUNT)
@@ -51,7 +52,11 @@ def aggregate(folder, name, outFile):
             if multiAbsSmellIndex2 >= 0:
                 multiAbsSmell += 1
 
+            unnAbsSmellIndex = line.find(CONSTS.SMELL_UNN_ABS)
+            if unnAbsSmellIndex >= 0:
+                unnAbsSmell += 1
+
     outFile.write(name + "," + str(fileCount) + "," + str(classCount) + "," + str(defineCount) + "," + str(fileResourceCount) +
                   "," + str(packageCount) + "," + str(serviceCount) + "," + str(execCount) + "," + str(LOCCount) + "," +
-                  str(multiAbsSmell))
+                  str(multiAbsSmell) + "," + str(unnAbsSmell))
     outFile.write("\n")

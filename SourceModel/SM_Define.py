@@ -24,3 +24,20 @@ class SM_Define(SourceModel.SM_Element.SM_Element):
             startIndex = len(matches[0])
             return text[startIndex:endIndex]
         return text[startIndex:endIndex]
+
+    def getBodyTextSize(self):
+        loc = self.getLoc()
+        return loc, len(self.resourceBodyText)
+
+    def getLoc(self):
+        counter = self.countEntityDeclaration(SMCONSTS.LOC_REGEX, "newLine")
+        if counter > 0:
+            return counter+1
+
+        if (len(self.resourceBodyText) > 0):
+            return 1
+        return 0
+
+    def countEntityDeclaration(self, regEx, entityType):
+        compiledRE = re.compile(regEx)
+        return len(compiledRE.findall(self.resourceBodyText))
