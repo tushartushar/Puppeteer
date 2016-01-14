@@ -15,10 +15,31 @@ def detectMultifacetedAbs(folder, outputFile):
     detectMultifacetedAbsForm2(folder, outputFile)
 
 def detectUnnecessaryAbs(folder, outputFile):
-    detectUnnAbs(folder, outputFile)
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith(".pp"):
+                fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
+                detectUnnAbsInClasses(fileObj, outputFile)
+                detectUnnAbsInDefine(fileObj, outputFile)
+                detectUnnAbsInModules(fileObj, outputFile)
 
 def detectImperativeAbs(folder, outputFile):
-    pass
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith(".pp"):
+                fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
+                detectImpAbs(fileObj, outputFile)
+
+
+def detectImpAbs(fileObj, outputFile):
+    execDecls = fileObj.getNoOfExecDeclarations()
+    totalDeclarations = fileObj.getNoOfClassDeclarations() + fileObj.getNoOfDefineDeclarations() + \
+                        fileObj.getNoOfFileDeclarations() + fileObj.getNoOfPackageDeclarations() + \
+                        fileObj.getNoOfServiceDeclarations() + execDecls
+    if float(totalDeclarations * CONSTS.IMPABS_THRESHOLD) <= float(
+            execDecls) and execDecls > CONSTS.IMPABS_MAXEXECCOUNT:
+        Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_IMPABS, CONSTS.FILE_RES)
+
 
 def detectDuplicateAbs(folder, outputFile):
     pass
@@ -81,15 +102,6 @@ def detectMulAbsInDefine(fileObj, outputFile):
 def detectMulAbsInModule(fileObj, outputFile):
     if fileObj.getLCOM() < CONSTS.LCOM_THRESHOLD:
         Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_MUL_ABS_2, CONSTS.FILE_RES)
-
-def detectUnnAbs(folder, outputFile):
-    for root, dirs, files in os.walk(folder):
-        for file in files:
-            if file.endswith(".pp"):
-                fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
-                detectUnnAbsInClasses(fileObj, outputFile)
-                detectUnnAbsInDefine(fileObj, outputFile)
-                detectUnnAbsInModules(fileObj, outputFile)
 
 def detectUnnAbsInClasses(fileObj, outputFile):
     classList = fileObj.getClassDeclarationList()

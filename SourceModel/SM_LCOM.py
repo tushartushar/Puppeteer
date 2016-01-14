@@ -99,8 +99,25 @@ def getElementObject(elementText, regex):
     if regex == SMCONSTS.USER_REGEX:
         return SourceModel.SM_User.SM_User(elementText)
 
+def sort(exClassElementList):
+    result = []
+    while len(exClassElementList) > 0:
+        largest = findLargest(exClassElementList)
+        result.append(largest)
+        exClassElementList.remove(largest)
+    return result
+
+def findLargest(exClassElementList):
+    if len(exClassElementList) > 0:
+        largest = exClassElementList[0]
+        for item in exClassElementList:
+            if (item.endIndex - item.startIndex) > (largest.endIndex - item.startIndex):
+                largest = item
+        return largest
+
 def filterOutInnerElements(exClassElementList):
     filteredList = []
+    exClassElementList = sort(exClassElementList)
     for element in exClassElementList:
         found = False
         for filteredItem in filteredList:
@@ -109,14 +126,15 @@ def filterOutInnerElements(exClassElementList):
                 break
         if found == False:
             filteredList.append(element)
-
     classElementList = []
     for item in filteredList:
         classElementList.append(item.elementObj)
     return classElementList
+
 
 class ExElement(object):
     def __init__(self, elementObj, startIndex, endIndex):
             self.elementObj = elementObj
             self.startIndex = startIndex
             self.endIndex = endIndex
+
