@@ -1,7 +1,7 @@
 REPO_ROOT = "/Users/Tushar/Documents/Research/PuppetQuality/Repos"
 AGGREGATOR_FILE = "AggregatedOutput.csv"
 CSV_HEADER = "Repo_name,PuppetFileCount,ClassCount,DefineCount,FileResourceCount,PackageResourceCount,\
-                     ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs\n"
+                     ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs,MissingAbs\n"
 PUPPETEER_OUT_FILE = "Puppeteer_output.txt"
 PUPPET_FILE_COUNT = "Puppet file count: "
 TOTAL_CLASS_DECLS = "Total class declarations: "
@@ -17,7 +17,8 @@ DEBUG_ON = False
 SMELL_MUL_ABS_1 = "Multifaceted Abstraction - Form 1"
 SMELL_MUL_ABS_2 = "Multifaceted Abstraction - Form 2"
 SMELL_UNN_ABS = "Unnecessary Abstraction"
-SMELL_IMPABS = "Imperative Abstraction"
+SMELL_IMP_ABS = "Imperative Abstraction"
+SMELL_MIS_ABS = "Missing Abstraction"
 
 FILE_RES = " File "
 SERVICE_RES = " Service "
@@ -30,3 +31,4 @@ SIZE_THRESHOLD_UNNABS = 2
 LOC_THRESHOLD_UNNABS = 3
 IMPABS_THRESHOLD = 0.2
 IMPABS_MAXEXECCOUNT = 2
+MISABS_MAX_NON_ABS_COUNT = 2

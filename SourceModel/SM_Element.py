@@ -39,3 +39,16 @@ class SM_Element:
                     varList.append(m.group(1).strip())
 
         return varList
+
+    def getLOC(self):
+        counter = self.countEntityDeclaration(SMCONSTS.LOC_REGEX, "newLine")
+        if counter > 0:
+            return counter+1
+
+        if (len(self.resourceText) > 0):
+            return 1
+        return 0
+
+    def countEntityDeclaration(self, regEx, entityType):
+        compiledRE = re.compile(regEx)
+        return len(compiledRE.findall(self.resourceText))

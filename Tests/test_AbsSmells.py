@@ -66,7 +66,7 @@ class TestAbsSmells(TestCase):
         self.test_detectMulAbsInModule_PositiveCase()
 
     def test_detectMulAbsInModule_PositiveCase(self):
-        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/cmits-example/modules-unclass/hpc_cluster/manifests/login_node.pp"
+        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/operations-puppet-production/manifests/role/authdns.pp"
         testFile = "tmp/multifacetedAbsForm2ModuleTest.txt"
         fileObj = SourceModel.SM_File.SM_File(fileName)
         outFile = open(testFile, 'w')
@@ -124,3 +124,13 @@ class TestAbsSmells(TestCase):
         outFile.close()
         outFileRead = open(testFile, 'r')
         self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectMisAbs(self):
+        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/cmits-example/modules-unclass/searde_svn/manifests/server.pp"
+        testFile = "tmp/missingAbsTest.txt"
+        fileObj = SourceModel.SM_File.SM_File(fileName)
+        outFile = open(testFile, 'w')
+        AbsSmellDectector.detectMisAbs(fileObj, outFile)
+        outFile.close()
+        outFileRead = open(testFile, 'r')
+        self.assertEquals(len(outFileRead.read()), 0)

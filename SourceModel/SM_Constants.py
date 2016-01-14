@@ -1,5 +1,5 @@
-CLASS_REGEX = r'class\W+.+\{'
-DEFINE_REGEX = r'define\W+.+\{'
+CLASS_REGEX = r'class\W+.+\W*\(|class\W+.+\{'
+DEFINE_REGEX = r'define\W+.+\W*\(|define\W+.+\{'
 FILE_REGEX = r'file\W*\{\W*\'.+\'\W*:|file\W*\{\W*\".+\"\W*:|file\W*{\W*\$.+\W*:'
 PACKAGE_REGEX = r'package\W*\{\W*\'.+\'\W*:|package\W*\{\W*\".+\"\W*:|package\W*{\W*\$.+\W*:'
 SERVICE_REGEX = r'service\W*\{\W*\'.+\'\W*:|service\W*\{\W*\".+\"\W*:|service\W*{\W*\$.+\W*:'
@@ -18,3 +18,4 @@ VAR1_EX_REGEX = r'\$\{(.+)\}'
 VAR2_EX_REGEX = r'\$(.+)\W*\{'
 VAR3_EX_REGEX = r'\'(.+)\''
 VAR4_EX_REGEX = r'\"(.+)\"'
+#class\W+.+\{|

@@ -6,7 +6,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbsSmellDectector.py" afterPath="$PROJECT_DIR$/AbsSmellDectector.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aggregator.py" afterPath="$PROJECT_DIR$/Aggregator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Constants.py" afterPath="$PROJECT_DIR$/Constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_Class.py" afterPath="$PROJECT_DIR$/SourceModel/SM_Class.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_Constants.py" afterPath="$PROJECT_DIR$/SourceModel/SM_Constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_Define.py" afterPath="$PROJECT_DIR$/SourceModel/SM_Define.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_Element.py" afterPath="$PROJECT_DIR$/SourceModel/SM_Element.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_File.py" afterPath="$PROJECT_DIR$/SourceModel/SM_File.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_LCOM.py" afterPath="$PROJECT_DIR$/SourceModel/SM_LCOM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/test_AbsSmells.py" afterPath="$PROJECT_DIR$/Tests/test_AbsSmells.py" />
     </list>
     <ignored path="Puppeteer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,21 +37,9 @@
         <entry file="file://$PROJECT_DIR$/SourceModel/SM_Class.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="29" selection-start-line="36" selection-start-column="0" selection-end-line="51" selection-end-column="61" />
+              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SM_Define.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SourceModel/SM_Define.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,40 +49,14 @@
         <entry file="file://$PROJECT_DIR$/SourceModel/SM_File.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#321#502#0" expanded="false" />
-                <element signature="e#1241#1438#0" expanded="false" />
-                <element signature="e#1835#2288#0" expanded="false" />
-                <element signature="e#2348#3057#0" expanded="false" />
-                <element signature="e#3105#3594#0" expanded="false" />
-                <element signature="e#3642#4131#0" expanded="false" />
-                <element signature="e#4180#4563#0" expanded="false" />
-                <element signature="e#4613#5008#0" expanded="false" />
+                <element signature="e#2114#2567#0" expanded="false" />
+                <element signature="e#3384#3873#0" expanded="false" />
+                <element signature="e#3921#4410#0" expanded="false" />
+                <element signature="e#4459#4842#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SM_LCOM.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SourceModel/SM_LCOM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Aggregator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aggregator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -97,13 +65,21 @@
         <entry file="file://$PROJECT_DIR$/AbsSmellDectector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#2682#2952#0" expanded="false" />
-                <element signature="e#3009#3281#0" expanded="false" />
-                <element signature="e#4315#4554#0" expanded="false" />
+                <element signature="e#3284#3554#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SM_Define.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SourceModel/SM_Define.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,8 +87,8 @@
       <file leaf-file-name="test_AbsSmells.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/test_AbsSmells.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54347825">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.19280206">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="19" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
                 <element signature="e#165#638#0" expanded="false" />
@@ -126,27 +102,17 @@
         <entry file="file://$PROJECT_DIR$/Puppeteer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="44" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="24" />
+              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Analyzer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analyzer.py">
+      <file leaf-file-name="SM_Constants.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SourceModel/SM_Constants.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="100" selection-start-line="3" selection-start-column="100" selection-end-line="3" selection-end-column="100" />
+              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -173,27 +139,27 @@
         <option value="$PROJECT_DIR$/SizeMetrics.py" />
         <option value="$PROJECT_DIR$/Puppeteer.py" />
         <option value="$PROJECT_DIR$/Analyzer.py" />
-        <option value="$PROJECT_DIR$/SourceModel/SM_CaseStmt.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_Exec.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_FileResource.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_IfStmt.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_PackageResource.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_ServiceResource.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_User.py" />
-        <option value="$PROJECT_DIR$/SourceModel/SM_Constants.py" />
         <option value="$PROJECT_DIR$/EncSmellDectector.py" />
         <option value="$PROJECT_DIR$/ModSmellDectector.py" />
         <option value="$PROJECT_DIR$/HieSmellDectector.py" />
         <option value="$PROJECT_DIR$/Utilities.py" />
-        <option value="$PROJECT_DIR$/SourceModel/SM_Element.py" />
-        <option value="$PROJECT_DIR$/SourceModel/SM_Class.py" />
-        <option value="$PROJECT_DIR$/SourceModel/SM_Define.py" />
-        <option value="$PROJECT_DIR$/SourceModel/SM_File.py" />
-        <option value="$PROJECT_DIR$/Constants.py" />
-        <option value="$PROJECT_DIR$/Aggregator.py" />
         <option value="$PROJECT_DIR$/Tests/AbsSmellsTests.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_LCOM.py" />
+        <option value="$PROJECT_DIR$/SourceModel/SM_Element.py" />
+        <option value="$PROJECT_DIR$/SourceModel/SM_CaseStmt.py" />
         <option value="$PROJECT_DIR$/AbsSmellDectector.py" />
+        <option value="$PROJECT_DIR$/Constants.py" />
+        <option value="$PROJECT_DIR$/Aggregator.py" />
+        <option value="$PROJECT_DIR$/SourceModel/SM_Constants.py" />
+        <option value="$PROJECT_DIR$/SourceModel/SM_Define.py" />
+        <option value="$PROJECT_DIR$/SourceModel/SM_Class.py" />
+        <option value="$PROJECT_DIR$/SourceModel/SM_File.py" />
         <option value="$PROJECT_DIR$/Tests/test_AbsSmells.py" />
       </list>
     </option>
@@ -228,6 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -277,7 +244,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,7 +252,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Python tests.Unittests in TestAbsSmells">
-    <configuration default="false" name="Unittest TestAbsSmells.test_detectUnnAbsInClasses" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestAbsSmells" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -298,14 +264,31 @@
       <module name="Puppeteer" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test_AbsSmells.py" />
       <option name="CLASS_NAME" value="TestAbsSmells" />
-      <option name="METHOD_NAME" value="test_detectUnnAbsInClasses" />
+      <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Puppeteer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Puppeteer" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Puppeteer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="Unittest TestAbsSmells.test_detectUnnAbsInDefine" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -330,7 +313,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestAbsSmells.test_detectUnnAbsInModules" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestAbsSmells.test_detectMulAbsInModule_PositiveCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -342,7 +325,7 @@
       <module name="Puppeteer" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test_AbsSmells.py" />
       <option name="CLASS_NAME" value="TestAbsSmells" />
-      <option name="METHOD_NAME" value="test_detectUnnAbsInModules" />
+      <option name="METHOD_NAME" value="test_detectMulAbsInModule_PositiveCase" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -352,7 +335,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestAbsSmells.test_detectImpAbs" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestAbsSmells.test_detectMisAbs" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -364,31 +347,9 @@
       <module name="Puppeteer" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test_AbsSmells.py" />
       <option name="CLASS_NAME" value="TestAbsSmells" />
-      <option name="METHOD_NAME" value="test_detectImpAbs" />
+      <option name="METHOD_NAME" value="test_detectMisAbs" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in TestAbsSmells" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Puppeteer" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test_AbsSmells.py" />
-      <option name="CLASS_NAME" value="TestAbsSmells" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -537,19 +498,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.AbsSmellDectector" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInClasses" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInDefine" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInModules" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectImpAbs" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in TestAbsSmells" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestAbsSmells" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Puppeteer" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInDefine" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectMulAbsInModule_PositiveCase" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectMisAbs" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestAbsSmells" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectImpAbs" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInModules" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInDefine" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInClasses" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectMulAbsInModule_PositiveCase" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Puppeteer" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectMisAbs" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestAbsSmells.test_detectUnnAbsInDefine" />
       </list>
     </recent_temporary>
   </component>
@@ -567,34 +528,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestAbsSmells_test_detectImpAbs - 2016.01.14 at 11h 01m 19s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectImpAbs" configurationId="tests" />
+    <history-entry file="Unittest_TestAbsSmells_test_detectMisAbs - 2016.01.14 at 16h 59m 08s.xml">
+      <configuration name="Unittest TestAbsSmells.test_detectMisAbs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectImpAbs - 2016.01.14 at 11h 01m 31s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectImpAbs" configurationId="tests" />
+    <history-entry file="Unittest_TestAbsSmells_test_detectMisAbs - 2016.01.14 at 17h 02m 09s.xml">
+      <configuration name="Unittest TestAbsSmells.test_detectMisAbs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectMulAbsInModule - 2016.01.14 at 10h 18m 14s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectMulAbsInModule" configurationId="tests" />
+    <history-entry file="Unittest_TestAbsSmells_test_detectMisAbs - 2016.01.14 at 17h 04m 53s.xml">
+      <configuration name="Unittest TestAbsSmells.test_detectMisAbs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectMulAbsInModule - 2016.01.14 at 10h 19m 33s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectMulAbsInModule" configurationId="tests" />
+    <history-entry file="Unittest_TestAbsSmells_test_detectMisAbs - 2016.01.14 at 17h 06m 14s.xml">
+      <configuration name="Unittest TestAbsSmells.test_detectMisAbs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectMulAbsInModule - 2016.01.14 at 10h 26m 31s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectMulAbsInModule" configurationId="tests" />
+    <history-entry file="Unittest_TestAbsSmells_test_detectMulAbsInModule_PositiveCase - 2016.01.14 at 17h 10m 12s.xml">
+      <configuration name="Unittest TestAbsSmells.test_detectMulAbsInModule_PositiveCase" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectUnnAbsInClasses - 2016.01.14 at 10h 35m 15s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectUnnAbsInClasses" configurationId="tests" />
+    <history-entry file="Unittest_TestAbsSmells_test_detectMulAbsInModule_PositiveCase - 2016.01.14 at 17h 13m 57s.xml">
+      <configuration name="Unittest TestAbsSmells.test_detectMulAbsInModule_PositiveCase" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectUnnAbsInDefine - 2016.01.14 at 10h 37m 20s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectUnnAbsInDefine" configurationId="tests" />
+    <history-entry file="Unittest_TestAbsSmells_test_detectMulAbsInModule_PositiveCase - 2016.01.14 at 17h 20m 42s.xml">
+      <configuration name="Unittest TestAbsSmells.test_detectMulAbsInModule_PositiveCase" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectUnnAbsInModules - 2016.01.14 at 10h 37m 56s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectUnnAbsInModules" configurationId="tests" />
+    <history-entry file="Unittests_in_TestAbsSmells - 2016.01.14 at 16h 55m 12s.xml">
+      <configuration name="Unittests in TestAbsSmells" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestAbsSmells_test_detectUnnAbsInModules - 2016.01.14 at 10h 55m 06s.xml">
-      <configuration name="Unittest TestAbsSmells.test_detectUnnAbsInModules" configurationId="tests" />
+    <history-entry file="Unittests_in_TestAbsSmells - 2016.01.14 at 17h 06m 23s.xml">
+      <configuration name="Unittests in TestAbsSmells" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestAbsSmells - 2016.01.14 at 11h 03m 21s.xml">
+    <history-entry file="Unittests_in_TestAbsSmells - 2016.01.14 at 17h 31m 16s.xml">
       <configuration name="Unittests in TestAbsSmells" configurationId="tests" />
     </history-entry>
   </component>
@@ -602,22 +563,22 @@
     <frame x="0" y="23" width="1280" height="709" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18515626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18515626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3484375" sideWeight="0.5375" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3484375" sideWeight="0.4625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3953125" sideWeight="0.80625" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -635,10 +596,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/SourceModel/SM_LCOM.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="9" />
+        <line-breakpoint type="python-line">
+          <url>file://$PROJECT_DIR$/AbsSmellDectector.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -651,11 +612,19 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SourceModel/SM_Class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -670,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -678,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,9 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -696,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,9 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -714,9 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -724,7 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,9 +746,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -805,7 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="38" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,9 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,9 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -884,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,9 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4213483">
           <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,15 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33707866">
           <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SourceModel/SM_CaseStmt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.747191">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.252809">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.252809">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,15 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3488372">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,51 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="50" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8255814">
-          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Define.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="29" selection-start-line="36" selection-start-column="0" selection-end-line="51" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="100" selection-start-line="3" selection-start-column="100" selection-end-line="3" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aggregator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,42 +880,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SourceModel/SM_CaseStmt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aggregator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/unittest/suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33426183">
+          <caret line="599" column="0" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04178273">
+          <caret line="3" column="111" selection-start-line="3" selection-start-column="111" selection-end-line="3" selection-end-column="111" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SourceModel/SM_LCOM.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.87743735">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Class.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Puppeteer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="44" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SourceModel/SM_File.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#321#502#0" expanded="false" />
-            <element signature="e#1241#1438#0" expanded="false" />
-            <element signature="e#1835#2288#0" expanded="false" />
-            <element signature="e#2348#3057#0" expanded="false" />
-            <element signature="e#3105#3594#0" expanded="false" />
-            <element signature="e#3642#4131#0" expanded="false" />
-            <element signature="e#4180#4563#0" expanded="false" />
-            <element signature="e#4613#5008#0" expanded="false" />
+            <element signature="e#2114#2567#0" expanded="false" />
+            <element signature="e#3384#3873#0" expanded="false" />
+            <element signature="e#3921#4410#0" expanded="false" />
+            <element signature="e#4459#4842#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,20 +962,42 @@
     <entry file="file://$PROJECT_DIR$/AbsSmellDectector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#2682#2952#0" expanded="false" />
-            <element signature="e#3009#3281#0" expanded="false" />
-            <element signature="e#4315#4554#0" expanded="false" />
+            <element signature="e#3284#3554#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Define.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Puppeteer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SourceModel/SM_Constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/test_AbsSmells.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54347825">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.19280206">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="19" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <element signature="e#165#638#0" expanded="false" />

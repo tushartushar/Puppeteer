@@ -3,19 +3,30 @@ import Utilities
 import SourceModel.SM_FileResource
 import SourceModel.SM_ServiceResource
 import SourceModel.SM_PackageResource
-import SourceModel.SM_Constants as SMCONSTS
 import SourceModel.SM_Class
 import SourceModel.SM_LCOM
 import SourceModel.SM_Define
+import SourceModel.SM_Constants as SMCONSTS
+import SourceModel.SM_Define
+import SourceModel.SM_Exec
+import SourceModel.SM_CaseStmt
+import SourceModel.SM_IfStmt
+import SourceModel.SM_User
+import SourceModel.SM_Element
+
 
 class SM_File:
 
-    def __init__(self, file):
-        curFile = open(file, 'rt', errors='ignore')
-        self.fileText = curFile.read()
-        self.resourceBodyText = self.fileText
-        self.fileName = file
-        curFile.close()
+    def __init__(self, file=""):
+        if file != "":
+            curFile = open(file, 'rt', errors='ignore')
+            self.fileText = curFile.read()
+            self.resourceBodyText = self.fileText
+            self.fileName = file
+            curFile.close()
+
+    def setText(self, text):
+        self.fileText = text
 
     def getNoOfClassDeclarations(self):
         return self.countEntityDeclaration(SMCONSTS.CLASS_REGEX, "class")
@@ -114,15 +125,144 @@ class SM_File:
         compiledRE = re.compile(SMCONSTS.DEFINE_REGEX)
         defineList = []
         for match in compiledRE.findall(self.fileText):
-            defineText = self.extractResourceText(match)
+            defineText, s, e = self.extractElementText(match)
             Utilities.myPrint("Extracted define declaration: " + defineText)
             defineObj = SourceModel.SM_Define.SM_Define(defineText)
             defineList.append(defineObj)
         return defineList
 
     def getLCOM(self):
-        return SourceModel.SM_LCOM.getLCOM(self.resourceBodyText)
+        return SourceModel.SM_LCOM.getLCOM(self.getOuterElementList())
 
     def getBodyTextSize(self):
         loc = self.getLinesOfCode()
         return loc, len(self.resourceBodyText)
+
+    def getOuterClassList(self):
+        exElementList = []
+        exElementList.extend(self.getElementList(SMCONSTS.CLASS_REGEX))
+        filteredList = self.filterOutInnerElements(exElementList)
+        return filteredList
+
+    def getOuterDefineList(self):
+        exElementList = []
+        exElementList.extend(self.getElementList(SMCONSTS.DEFINE_REGEX))
+        filteredList = self.filterOutInnerElements(exElementList)
+        return filteredList
+
+    def getOuterElementList(self):
+        exElementList = []
+        exElementList.extend(self.getElementList(SMCONSTS.CLASS_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.SERVICE_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.CASE_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.DEFINE_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.EXEC_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.FILE_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.IF_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.PACKAGE_REGEX))
+        exElementList.extend(self.getElementList(SMCONSTS.USER_REGEX))
+        filteredList = self.filterOutInnerElements(exElementList)
+        return filteredList
+
+    def getElementList(self, regex):
+        compiledRE = re.compile(regex)
+        exElementList = []
+        for str in (compiledRE.findall(self.fileText)):
+            elementText, startIndex, endIndex = self.extractElementText(str)
+            elementObj = self.getElementObject(elementText, regex)
+            exElementList.append(ExElement(elementObj, startIndex, endIndex))
+
+        return exElementList
+
+    def extractElementText(self, initialString):
+        compiledRE1 = re.compile(r'\{')
+        compiledRE2 = re.compile(r'\}')
+        curBracketCount = len(compiledRE1.findall(initialString)) - len(compiledRE2.findall(initialString))
+        index = self.fileText.find(initialString)
+        if index < 0:
+            return initialString, 0, len(initialString)
+        curIndex = index + len(initialString) + 1
+        if curBracketCount == 0:
+            #And now we need to find the corresponding ')' to avoid any errors where curly brackets are matched
+            #in the parameters itself.
+            found = False
+            while curIndex < len(self.fileText) and not found:
+                if self.fileText[curIndex] == ')':
+                    found = True
+                curIndex +=1
+
+            #This is to find the first "{" since currently there is no { which may happen in case of multi-line class def
+            found = False
+            while curIndex < len(self.fileText) and not found:
+                if self.fileText[curIndex] == '{':
+                    found = True
+                    curBracketCount = 1
+                curIndex += 1
+
+        while curBracketCount > 0 and curIndex < len(self.fileText):
+            if self.fileText[curIndex] == '}':
+                curBracketCount -= 1
+            if self.fileText[curIndex] == '{':
+                curBracketCount += 1
+            curIndex +=1
+
+        return self.fileText[index:curIndex], index, curIndex
+
+    def getElementObject(self, elementText, regex):
+        if regex == SMCONSTS.CLASS_REGEX:
+            return SourceModel.SM_Class.SM_Class(elementText)
+        if regex == SMCONSTS.DEFINE_REGEX:
+            return SourceModel.SM_Define.SM_Define(elementText)
+        if regex == SMCONSTS.EXEC_REGEX:
+            return SourceModel.SM_Exec.SM_Exec(elementText)
+        if regex == SMCONSTS.FILE_REGEX:
+            return SourceModel.SM_FileResource.SM_FileResource(elementText)
+        if regex == SMCONSTS.PACKAGE_REGEX:
+            return SourceModel.SM_PackageResource.SM_PackageResource(elementText)
+        if regex == SMCONSTS.SERVICE_REGEX:
+            return SourceModel.SM_ServiceResource.SM_ServiceResource(elementText)
+        if regex == SMCONSTS.IF_REGEX:
+            return SourceModel.SM_IfStmt.SM_IfStmt(elementText)
+        if regex == SMCONSTS.CASE_REGEX:
+            return SourceModel.SM_CaseStmt.SM_CaseStmt(elementText)
+        if regex == SMCONSTS.USER_REGEX:
+            return SourceModel.SM_User.SM_User(elementText)
+
+    def sort(self, exClassElementList):
+        result = []
+        while len(exClassElementList) > 0:
+            largest = self.findLargest(exClassElementList)
+            result.append(largest)
+            exClassElementList.remove(largest)
+        return result
+
+    def findLargest(self, exClassElementList):
+        if len(exClassElementList) > 0:
+            largest = exClassElementList[0]
+            for item in exClassElementList:
+                if (item.endIndex - item.startIndex) > (largest.endIndex - item.startIndex):
+                    largest = item
+            return largest
+
+    def filterOutInnerElements(self, exClassElementList):
+        filteredList = []
+        exClassElementList = self.sort(exClassElementList)
+        for element in exClassElementList:
+            found = False
+            for filteredItem in filteredList:
+                if element.startIndex >= filteredItem.startIndex and element.endIndex <= filteredItem.endIndex:
+                    found = True
+                    break
+            if found == False:
+                filteredList.append(element)
+        classElementList = []
+        for item in filteredList:
+            classElementList.append(item.elementObj)
+        return classElementList
+
+
+class ExElement(object):
+    def __init__(self, elementObj, startIndex, endIndex):
+            self.elementObj = elementObj
+            self.startIndex = startIndex
+            self.endIndex = endIndex

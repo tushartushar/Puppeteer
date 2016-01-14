@@ -12,6 +12,7 @@ def aggregate(folder, name, outFile):
     multiAbsSmellCount = 0
     unnAbsSmellCount = 0
     impAbsSmellCount = 0
+    misAbsSmellCount = 0
     with open(folder + "/" + CONSTS.PUPPETEER_OUT_FILE, 'rt', errors='ignore') as curFile:
         for line in curFile:
             fileCount = getFileCount(fileCount, line)
@@ -25,15 +26,22 @@ def aggregate(folder, name, outFile):
             multiAbsSmellCount = getMulAbsSmellCount(line, multiAbsSmellCount)
             unnAbsSmellCount = getUnnAbsSmellCount(line, unnAbsSmellCount)
             impAbsSmellCount = getImpAbsSmellCount(impAbsSmellCount, line)
+            misAbsSmellCount = getMisAbsSmellCount(misAbsSmellCount, line)
 
     outFile.write(name + "," + str(fileCount) + "," + str(classCount) + "," + str(defineCount) + "," + str(fileResourceCount) +
                   "," + str(packageCount) + "," + str(serviceCount) + "," + str(execCount) + "," + str(LOCCount) + "," +
-                  str(multiAbsSmellCount) + "," + str(unnAbsSmellCount) + "," + str(impAbsSmellCount))
+                  str(multiAbsSmellCount) + "," + str(unnAbsSmellCount) + "," + str(impAbsSmellCount) + "," +
+                  str(misAbsSmellCount))
     outFile.write("\n")
 
+def getMisAbsSmellCount(misAbsSmellCount, line):
+    misAbsSmellIndex = line.find(CONSTS.SMELL_MIS_ABS)
+    if misAbsSmellIndex >= 0:
+        misAbsSmellCount += 1
+    return misAbsSmellCount
 
 def getImpAbsSmellCount(impAbsSmellCount, line):
-    impAbsSmellIndex = line.find(CONSTS.SMELL_IMPABS)
+    impAbsSmellIndex = line.find(CONSTS.SMELL_IMP_ABS)
     if impAbsSmellIndex >= 0:
         impAbsSmellCount += 1
     return impAbsSmellCount

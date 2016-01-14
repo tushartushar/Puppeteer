@@ -38,14 +38,24 @@ def detectImpAbs(fileObj, outputFile):
                         fileObj.getNoOfServiceDeclarations() + execDecls
     if float(totalDeclarations * CONSTS.IMPABS_THRESHOLD) <= float(
             execDecls) and execDecls > CONSTS.IMPABS_MAXEXECCOUNT:
-        Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_IMPABS, CONSTS.FILE_RES)
+        Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_IMP_ABS, CONSTS.FILE_RES)
 
 
 def detectDuplicateAbs(folder, outputFile):
     pass
 
 def detectMissingAbs(folder, outputFile):
-    pass
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith(".pp"):
+                fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
+                detectMisAbs(fileObj, outputFile)
+
+def detectMisAbs(fileObj, outputFile):
+    classAndDefineCount = len(fileObj.getOuterClassList() + fileObj.getOuterDefineList())
+    outerElementCount = len(fileObj.getOuterElementList())
+    if outerElementCount - classAndDefineCount > CONSTS.MISABS_MAX_NON_ABS_COUNT:
+        Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_MIS_ABS, CONSTS.FILE_RES)
 
 def detectMultifacetedAbsForm1(folder, outputFile):
     for root, dirs, files in os.walk(folder):
