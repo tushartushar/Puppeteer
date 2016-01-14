@@ -1,7 +1,8 @@
 REPO_ROOT = "/Users/Tushar/Documents/Research/PuppetQuality/Repos"
 AGGREGATOR_FILE = "AggregatedOutput.csv"
 CSV_HEADER = "Repo_name,PuppetFileCount,ClassCount,DefineCount,FileResourceCount,PackageResourceCount,\
-                     ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs,MissingAbs\n"
+                     ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs,MissingAbs,\
+                     InsufficientMod\n"
 PUPPETEER_OUT_FILE = "Puppeteer_output.txt"
 PUPPET_FILE_COUNT = "Puppet file count: "
 TOTAL_CLASS_DECLS = "Total class declarations: "
@@ -19,6 +20,7 @@ SMELL_MUL_ABS_2 = "Multifaceted Abstraction - Form 2"
 SMELL_UNN_ABS = "Unnecessary Abstraction"
 SMELL_IMP_ABS = "Imperative Abstraction"
 SMELL_MIS_ABS = "Missing Abstraction"
+SMELL_INS_MOD_1 = "Insufficient Modularization - Form 1"
 
 FILE_RES = " File "
 SERVICE_RES = " Service "

@@ -139,16 +139,24 @@ class SM_File:
         return loc, len(self.resourceBodyText)
 
     def getOuterClassList(self):
-        exElementList = []
-        exElementList.extend(self.getElementList(SMCONSTS.CLASS_REGEX))
-        filteredList = self.filterOutInnerElements(exElementList)
-        return filteredList
+        outerElementList = self.getOuterElementList()
+        classList = []
+        for element in outerElementList:
+            if type(element) == SourceModel.SM_Class:
+                classList.append(element)
+        return classList
 
     def getOuterDefineList(self):
-        exElementList = []
-        exElementList.extend(self.getElementList(SMCONSTS.DEFINE_REGEX))
-        filteredList = self.filterOutInnerElements(exElementList)
-        return filteredList
+        outerElementList = self.getOuterElementList()
+        defineList = []
+        for element in outerElementList:
+            if type(element) == SourceModel.SM_Define:
+                defineList.append(element)
+        return defineList
+        # exElementList = []
+        # exElementList.extend(self.getElementList(SMCONSTS.DEFINE_REGEX))
+        # filteredList = self.filterOutInnerElements(exElementList)
+        # return filteredList
 
     def getOuterElementList(self):
         exElementList = []
