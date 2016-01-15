@@ -24,6 +24,7 @@ class SM_Define(SourceModel.SM_Element.SM_Element):
         startIndex = 0
         endIndex = len(text) - 1
         if len(matches)>0:
+            print(matches)
             startIndex = len(matches[0])
 
         initialString = text[0:startIndex]
