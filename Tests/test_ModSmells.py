@@ -4,13 +4,49 @@ import ModSmellDectector
 
 class TestModSmells(TestCase):
     def test_detectInsModForm1(self):
+        self.insModForm1PositiveCase()
+        self.insModForm1NegativeCase()
+
+    def insModForm1PositiveCase(self):
+        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/operations-puppet-production/manifests/role/authdns.pp"
+        outFileName = "tmp/insufficientModForm1Test.txt"
+        fileObj = SourceModel.SM_File.SM_File(fileName)
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectInsModForm1(fileObj, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)
+
+    def insModForm1NegativeCase(self):
         fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/cmits-example/modules-unclass/stig_misc/manifests/find_uneven.pp"
         outFileName = "tmp/insufficientModForm1Test.txt"
         fileObj = SourceModel.SM_File.SM_File(fileName)
         outFile = open(outFileName, 'w')
-
         ModSmellDectector.detectInsModForm1(fileObj, outFile)
         outFile.close()
-
         outFileRead = open(outFileName, 'r')
         self.assertEquals(len(outFileRead.read()), 0)
+
+    def test_detectInsModForm2(self):
+        self.insModPositiveCase()
+        self.insModNegativeCase()
+
+    def insModNegativeCase(self):
+        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/cmits-example/modules-unclass/stig_misc/manifests/run_control_scripts.pp"
+        outFileName = "tmp/insufficientModForm2Test.txt"
+        fileObj = SourceModel.SM_File.SM_File(fileName)
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectInsModForm2(fileObj, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertEquals(len(outFileRead.read()), 0)
+
+    def insModPositiveCase(self):
+        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/cmits-example/modules-unclass/searde_svn/manifests/server.pp"
+        outFileName = "tmp/insufficientModForm2Test.txt"
+        fileObj = SourceModel.SM_File.SM_File(fileName)
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectInsModForm2(fileObj, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)

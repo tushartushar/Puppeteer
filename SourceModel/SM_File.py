@@ -55,6 +55,15 @@ class SM_File:
             return 1
         return 0
 
+    def getLinesOfCodeWithoutComments(self):
+        totalLines = self.getLinesOfCode()
+        totalCommentsLines = self.getLinesOfComments()
+        return totalLines - totalCommentsLines
+
+    def getLinesOfComments(self):
+        counter = self.countEntityDeclaration(SMCONSTS.COMMENT_REGEX, "newLine")
+        return counter
+
     def countEntityDeclaration(self, regEx, entityType):
         compiledRE = re.compile(regEx)
         Utilities.myPrint("Identified " + entityType + " declarations: " + str(compiledRE.findall(self.fileText)) + \
@@ -142,7 +151,7 @@ class SM_File:
         outerElementList = self.getOuterElementList()
         classList = []
         for element in outerElementList:
-            if type(element) == SourceModel.SM_Class:
+            if type(element) is SourceModel.SM_Class.SM_Class:
                 classList.append(element)
         return classList
 
@@ -150,7 +159,7 @@ class SM_File:
         outerElementList = self.getOuterElementList()
         defineList = []
         for element in outerElementList:
-            if type(element) == SourceModel.SM_Define:
+            if type(element) is SourceModel.SM_Define.SM_Define:
                 defineList.append(element)
         return defineList
         # exElementList = []

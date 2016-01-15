@@ -48,7 +48,6 @@ class SM_Class(SourceModel.SM_Element.SM_Element):
 
         return text[startIndex:endIndex]
 
-
     def getLCOM(self):
         fileObj = SourceModel.SM_File.SM_File()
         fileObj.setText(self.resourceBodyText)
@@ -57,6 +56,15 @@ class SM_Class(SourceModel.SM_Element.SM_Element):
     def getBodyTextSize(self):
         loc = self.getLoc()
         return loc, len(self.resourceBodyText)
+
+    def getLocWithoutComments(self):
+        totalLines = self.getLoc()
+        totalCommentsLines = self.getLinesOfComments()
+        return totalLines - totalCommentsLines
+
+    def getLinesOfComments(self):
+        counter = self.countEntityDeclaration(SMCONSTS.COMMENT_REGEX, "newLine")
+        return counter
 
     def getLoc(self):
         counter = self.countEntityDeclaration(SMCONSTS.LOC_REGEX, "newLine")

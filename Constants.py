@@ -21,6 +21,8 @@ SMELL_UNN_ABS = "Unnecessary Abstraction"
 SMELL_IMP_ABS = "Imperative Abstraction"
 SMELL_MIS_ABS = "Missing Abstraction"
 SMELL_INS_MOD_1 = "Insufficient Modularization - Form 1"
+SMELL_INS_MOD_2 = "Insufficient Modularization - Form 2"
+SMELL_INS_MOD_3 = "Insufficient Modularization - Form 3"
 
 FILE_RES = " File "
 SERVICE_RES = " Service "
@@ -34,3 +36,6 @@ LOC_THRESHOLD_UNNABS = 3
 IMPABS_THRESHOLD = 0.2
 IMPABS_MAXEXECCOUNT = 2
 MISABS_MAX_NON_ABS_COUNT = 2
+MAX_CLASS_LOC_THRESHOLD = 40
+MAX_DEFINE_LOC_THRESHOLD = MAX_CLASS_LOC_THRESHOLD
+MAX_MODULE_LOC_THRESHOLD = MAX_CLASS_LOC_THRESHOLD * 2

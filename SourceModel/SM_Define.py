@@ -57,6 +57,15 @@ class SM_Define(SourceModel.SM_Element.SM_Element):
             return 1
         return 0
 
+    def getLocWithoutComments(self):
+        totalLines = self.getLoc()
+        totalCommentsLines = self.getLinesOfComments()
+        return totalLines - totalCommentsLines
+
+    def getLinesOfComments(self):
+        counter = self.countEntityDeclaration(SMCONSTS.COMMENT_REGEX, "newLine")
+        return counter
+
     def countEntityDeclaration(self, regEx, entityType):
         compiledRE = re.compile(regEx)
         return len(compiledRE.findall(self.resourceBodyText))
