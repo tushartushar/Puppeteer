@@ -60,3 +60,43 @@ class TestModSmells(TestCase):
         outFile.close()
         outFileRead = open(outFileName, 'r')
         self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectUnstructuredModForm1(self):
+        self.detectUnsModForm1NegativeCase()
+        self.detectUnsModForm1PositiveCase()
+
+    def detectUnsModForm1NegativeCase(self):
+        folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/control-repo/"
+        outFileName = "tmp/unstructuredModForm1Test.txt"
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectUnstructuredModForm1(folderName, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertEquals(len(outFileRead.read()), 0)
+
+    def detectUnsModForm1PositiveCase(self):
+        folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/kickstack/"
+        outFileName = "tmp/unstructuredModForm1Test.txt"
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectUnstructuredModForm1(folderName, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectUnsModForm2(self):
+        folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/kickstack/manifests/cinder"
+        outFileName = "tmp/unstructuredModForm2Test.txt"
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectUnsModForm2(folderName, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectUnsModForm3(self):
+        folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/puppet-pyrocms/modules/firewall"
+        outFileName = "tmp/unstructuredModForm3Test.txt"
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectUnsModForm3(folderName, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)

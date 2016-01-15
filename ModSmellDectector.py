@@ -2,6 +2,7 @@ import Utilities
 import os
 import SourceModel.SM_File
 import Constants as CONSTS
+import FileOperations
 
 def detectSmells(folder, outputFile):
     detectInsufficientMod(folder, outputFile)
@@ -15,7 +16,9 @@ def detectInsufficientMod(folder, outputFile):
     detectInsufficientModForm3(folder, outputFile)
 
 def detectUnstructuredMod(folder, outputFile):
-    pass
+    detectUnstructuredModForm1(folder, outputFile)
+    detectUnstructuredModForm2(folder, outputFile)
+    detectUnstructuredModForm3(folder, outputFile)
 
 def detectTightlyCoupledMod(folder, outputFile):
     pass
@@ -68,3 +71,66 @@ def detectInsufficientModForm3(folder, outputFile):
 def detectInsModForm3(fileobj, outputFile):
     if fileobj.getMaxNestingDepth() > CONSTS.MAX_NESTING_DEPTH:
         Utilities.reportSmell(outputFile, fileobj.fileName, CONSTS.SMELL_INS_MOD_3, CONSTS.FILE_RES)
+
+#Form 1 - size of the upper-level manifests folder when modules folder is absent, or both modules and manifests folder not present
+def detectUnstructuredModForm1(folder, outputFile):
+    if isModulesExists(folder):
+        return
+    manifestsFolder = getManifestsFolder(folder) #repo-level manifests folder
+    if manifestsFolder == "":
+        Utilities.reportSmell(outputFile, manifestsFolder, CONSTS.SMELL_UNS_MOD_1, CONSTS.REPO_MANIFEST)
+        return
+    if FileOperations.countPuppetFiles(manifestsFolder) > CONSTS.MAX_MANIFESTS_PUPPET_FILES:
+        Utilities.reportSmell(outputFile, manifestsFolder, CONSTS.SMELL_UNS_MOD_1, CONSTS.REPO_MANIFEST)
+
+def isModulesExists(folder):
+    for aFile in os.listdir(folder):
+        if os.path.isdir(os.path.join(folder,aFile)):
+            if aFile.__contains__(CONSTS.MODULES):
+                return True
+    return False
+
+def getModulesFolder(folder):
+    for aFile in os.listdir(folder):
+        if os.path.isdir(os.path.join(folder,aFile)):
+            if aFile.__contains__(CONSTS.MODULES):
+                return os.path.join(folder, aFile)
+    return ""
+
+def getManifestsFolder(folder):
+    for aFile in os.listdir(folder):
+        if os.path.isdir(os.path.join(folder,aFile)):
+            if aFile == CONSTS.MANIFESTS:
+                return os.path.join(folder, aFile)
+    return ""
+
+#Form 2 - In each module, manifest folder must be present
+def detectUnstructuredModForm2(folder, outputFile):
+    modulesFolder = getModulesFolder(folder)
+    if modulesFolder:
+        for dir in os.listdir(modulesFolder):
+            if os.path.isdir(os.path.join(modulesFolder, dir)):
+                detectUnsModForm2(os.path.join(modulesFolder, dir), outputFile)
+
+def detectUnsModForm2(folder, outputFile):
+    if not getManifestsFolder(folder):
+        Utilities.reportSmell(outputFile,folder, CONSTS.SMELL_UNS_MOD_2, CONSTS.MODULE_MANIFEST)
+
+#Form 3 - When a module contains other than recommended folders/files
+def detectUnstructuredModForm3(folder, outputFile):
+    modulesFolder = getModulesFolder(folder)
+    if modulesFolder:
+        for dir in os.listdir(modulesFolder):
+            detectUnsModForm3(os.path.join(modulesFolder, dir), outputFile)
+
+def detectUnsModForm3(folder, outputFile):
+    counter = 0
+    if os.path.isdir(folder):
+        for dir in os.listdir(folder):
+            if not (dir == "files" or dir == "manifests" or dir == "templates" or dir == "lib" or dir == "tests" or
+                            dir == "spec" or dir.__contains__("readme") or dir.__contains__("README") or
+                        dir.__contains__("license") or dir.__contains__("LICENSE") or dir.__contains__("metadata")):
+                counter += 1
+
+    if counter > CONSTS.MAX_ALLOWED_NONSTANDARD_FILES:
+        Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_UNS_MOD_3, CONSTS.OTHERFILES)
