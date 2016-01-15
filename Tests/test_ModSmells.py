@@ -50,3 +50,13 @@ class TestModSmells(TestCase):
         outFile.close()
         outFileRead = open(outFileName, 'r')
         self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectInsModForm3(self):
+        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/cmits-example/modules-unclass/xserver/manifests/init.pp"
+        outFileName = "tmp/insufficientModForm3Test.txt"
+        fileObj = SourceModel.SM_File.SM_File(fileName)
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectInsModForm3(fileObj, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)

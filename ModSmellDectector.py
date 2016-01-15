@@ -12,6 +12,7 @@ def detectSmells(folder, outputFile):
 def detectInsufficientMod(folder, outputFile):
     detectInsufficientModForm1(folder, outputFile)
     detectInsufficientModForm2(folder, outputFile)
+    detectInsufficientModForm3(folder, outputFile)
 
 def detectUnstructuredMod(folder, outputFile):
     pass
@@ -36,6 +37,7 @@ def detectInsModForm1(fileObj, outputFile):
     if classDefineDeclCount > 1:
         Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_INS_MOD_1, CONSTS.FILE_RES)
 
+#Form 2 - When the lines of code in a class, define, or a file crosses a certain threshold.
 def detectInsufficientModForm2(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
@@ -54,3 +56,15 @@ def detectInsModForm2(fileObj, outputFile):
 
     if fileObj.getLinesOfCodeWithoutComments() > CONSTS.MAX_MODULE_LOC_THRESHOLD:
             Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_INS_MOD_2, CONSTS.FILE_RES)
+
+#Form 3 - When the complexity (max nesting depth) of a module is greater than a threshold
+def detectInsufficientModForm3(folder, outputFile):
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith(".pp"):
+                fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
+                detectInsModForm3(fileObj, outputFile)
+
+def detectInsModForm3(fileobj, outputFile):
+    if fileobj.getMaxNestingDepth() > CONSTS.MAX_NESTING_DEPTH:
+        Utilities.reportSmell(outputFile, fileobj.fileName, CONSTS.SMELL_INS_MOD_3, CONSTS.FILE_RES)

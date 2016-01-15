@@ -44,6 +44,10 @@ def getInsModSmellCount(insModSmellCount, line):
     insModSmellIndex = line.find(CONSTS.SMELL_INS_MOD_2)
     if insModSmellIndex >= 0:
         insModSmellCount += 1
+
+    insModSmellIndex = line.find(CONSTS.SMELL_INS_MOD_3)
+    if insModSmellIndex >= 0:
+        insModSmellCount += 1
     return  insModSmellCount
 
 def getMisAbsSmellCount(misAbsSmellCount, line):

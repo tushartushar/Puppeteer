@@ -277,6 +277,20 @@ class SM_File:
             classElementList.append(item.elementObj)
         return classElementList
 
+    def getMaxNestingDepth(self):
+        maxNestingDepth = 0
+        curIndex = 0
+        curBracketCount = 0
+        while curIndex < len(self.fileText):
+            if self.fileText[curIndex] == '}':
+                curBracketCount -= 1
+            if self.fileText[curIndex] == '{':
+                curBracketCount += 1
+                if curBracketCount > maxNestingDepth:
+                    maxNestingDepth = curBracketCount
+            curIndex +=1
+
+        return maxNestingDepth
 
 class ExElement(object):
     def __init__(self, elementObj, startIndex, endIndex):
