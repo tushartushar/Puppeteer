@@ -9,6 +9,8 @@ IF_REGEX = r'if\W+.+\W*\{'
 CASE_REGEX = r'case\W+.+\W*\{'
 USER_REGEX = r'user\W*\{\W*.+:'
 COMMENT_REGEX = r'\A#|\n#'
+HARDCODED_VALUE_REGEX = r'= \d+|=> \d+|= .*\'.+?\s*(?:\(.+\)\s*)*\'|=> .*\'.+?\s*(?:\(.+\)\s*)*\'|' \
+                        r'= .*\".+?\s*(?:\(.+\)\s*)*\"|=> .*\".+\s*(?:\(.+\)\s*)*\"'
 
 VAR1_REGEX = r'\$\{.+\}'
 VAR2_REGEX = r'\$.+\W*\{'

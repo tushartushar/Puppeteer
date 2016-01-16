@@ -21,7 +21,11 @@ def detectUnstructuredMod(folder, outputFile):
     detectUnstructuredModForm3(folder, outputFile)
 
 def detectTightlyCoupledMod(folder, outputFile):
-    pass
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith(".pp"):
+                fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
+                detectTCMod(fileObj, outputFile)
 
 def detectMissingDep(folder, outputFile):
     pass
@@ -134,3 +138,8 @@ def detectUnsModForm3(folder, outputFile):
 
     if counter > CONSTS.MAX_ALLOWED_NONSTANDARD_FILES:
         Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_UNS_MOD_3, CONSTS.OTHERFILES)
+
+def detectTCMod(fileObj, outputFile):
+    if not (fileObj.fileName.__contains__("param") or fileObj.fileName.__contains__("init") or fileObj.fileName.__contains__("site")):
+        if len(fileObj.getHardCodedStatments()) > 1:
+            Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_TC_MOD, CONSTS.FILE_RES)

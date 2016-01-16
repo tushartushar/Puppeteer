@@ -100,3 +100,14 @@ class TestModSmells(TestCase):
         outFile.close()
         outFileRead = open(outFileName, 'r')
         self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectTCMod(self):
+        #fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/operations-puppet-production/manifests/role/authdns.pp"
+        fileName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/cmits-example/modules-unclass/searde_svn/manifests/server.pp"
+        outFileName = "tmp/TCModTest.txt"
+        fileObj = SourceModel.SM_File.SM_File(fileName)
+        outFile = open(outFileName, 'w')
+        ModSmellDectector.detectTCMod(fileObj, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)

@@ -292,6 +292,19 @@ class SM_File:
 
         return maxNestingDepth
 
+    def getHardCodedStatments(self):
+        compiledRE = re.compile(SMCONSTS.HARDCODED_VALUE_REGEX)
+        hardCodedStmtList = compiledRE.findall(self.fileText)
+        filteredList = []
+        for item in hardCodedStmtList:
+            #print(item)
+            if not (item.__contains__("$") or item.__contains__("Package") or item.__contains__("Service") \
+                    or item.__contains__("File")):
+                filteredList.append(item)
+        #print(filteredList)
+        return filteredList
+
+
 class ExElement(object):
     def __init__(self, elementObj, startIndex, endIndex):
             self.elementObj = elementObj
