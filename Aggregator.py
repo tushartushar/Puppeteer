@@ -16,6 +16,7 @@ def aggregate(folder, name, outFile):
     insModSmellCount = 0
     unsModSmellCount = 0
     tcModSmellCount = 0
+    dupAbsSmellCount = 0
     with open(folder + "/" + CONSTS.PUPPETEER_OUT_FILE, 'rt', errors='ignore') as curFile:
         for line in curFile:
             fileCount = getFileCount(fileCount, line)
@@ -33,12 +34,21 @@ def aggregate(folder, name, outFile):
             insModSmellCount = getInsModSmellCount(insModSmellCount, line)
             unsModSmellCount = getUnsModSmellCount(unsModSmellCount, line)
             tcModSmellCount = getTCModSmellCount(tcModSmellCount, line)
+            dupAbsSmellCount = getDupAbsSmellCount(dupAbsSmellCount, line)
 
     outFile.write(name + "," + str(fileCount) + "," + str(classCount) + "," + str(defineCount) + "," + str(fileResourceCount) +
                   "," + str(packageCount) + "," + str(serviceCount) + "," + str(execCount) + "," + str(LOCCount) + "," +
                   str(multiAbsSmellCount) + "," + str(unnAbsSmellCount) + "," + str(impAbsSmellCount) + "," +
-                  str(misAbsSmellCount) + "," + str(insModSmellCount) + "," + str(unsModSmellCount) + "," + str(tcModSmellCount))
+                  str(misAbsSmellCount) + "," + str(insModSmellCount) + "," + str(unsModSmellCount) + "," +
+                  str(tcModSmellCount) + "," + str(dupAbsSmellCount))
     outFile.write("\n")
+
+
+def getDupAbsSmellCount(dupAbsSmellCount, line):
+    dupAbsSmellIndex = line.find((CONSTS.SMELL_DUP_ABS))
+    if dupAbsSmellIndex >= 0:
+        dupAbsSmellCount += 1
+    return dupAbsSmellCount
 
 def getTCModSmellCount(tcModSmellCount, line):
     tcModSmellIndex = line.find((CONSTS.SMELL_TC_MOD))
