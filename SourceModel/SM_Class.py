@@ -78,3 +78,16 @@ class SM_Class(SourceModel.SM_Element.SM_Element):
     def countEntityDeclaration(self, regEx, entityType):
         compiledRE = re.compile(regEx)
         return len(compiledRE.findall(self.resourceBodyText))
+
+    def getClassHierarchyInfo(self):
+        match = re.search(SMCONSTS.CLASS_GROUP_REGEX, self.resourceText)
+        clsName = ""
+        pClsName = ""
+        if match:
+            clsName = match.group(1)
+
+        match = re.search(SMCONSTS.CLASS_INH_REGEX, self.resourceText)
+        if match:
+            pClsName = match.group(1)
+            #print(clsName + " inherits " + pClsName)
+        return clsName, pClsName

@@ -12,6 +12,9 @@ COMMENT_REGEX = r'\A#|\n#'
 HARDCODED_VALUE_REGEX = r'= \d+|=> \d+|= .*\'.+?\s*(?:\(.+\)\s*)*\'|=> .*\'.+?\s*(?:\(.+\)\s*)*\'|' \
                         r'= .*\".+?\s*(?:\(.+\)\s*)*\"|=> .*\".+\s*(?:\(.+\)\s*)*\"'
 
+CLASS_GROUP_REGEX = r'class (\w+(?:\:\:\w+)*)\s*(?:\(.+\)\s*)*{*'
+CLASS_INH_REGEX = r'inherits (\w+(?:\:\:\w+)*){*'
+
 VAR1_REGEX = r'\$\{.+\}'
 VAR2_REGEX = r'\$.+\W*\{'
 VAR3_REGEX = r'\'.+\''
