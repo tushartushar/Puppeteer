@@ -15,8 +15,8 @@ def detectBrokenHie(folder, outputFile):
 
 def detectBroHierarchy(folder, outputFile):
     classNames, superClassNames = collectClassNames(folder)
-    print("classNames: " + str(classNames))
-    print("superClassNames: " + str(superClassNames))
+    #print("classNames: " + str(classNames))
+    #print("superClassNames: " + str(superClassNames))
     for superClass in superClassNames:
         if not classNames.__contains__(superClass):
             Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_BRO_HIE, CONSTS.MODULE_RES)

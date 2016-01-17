@@ -111,3 +111,13 @@ class TestModSmells(TestCase):
         outFile.close()
         outFileRead = open(outFileName, 'r')
         self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectHairballStr(self):
+        folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/operations-puppet/"
+        outFileName = "tmp/getGraphTest.txt"
+        outFile = open(outFileName, 'w')
+        graph = ModSmellDectector.detectHairballStr(folderName, outFile)
+        #graph.printGraph()
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)
