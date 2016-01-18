@@ -8,7 +8,6 @@ def detectSmells(folder, outputFile):
     detectInsufficientMod(folder, outputFile)
     detectUnstructuredMod(folder, outputFile)
     detectTightlyCoupledMod(folder, outputFile)
-    detectMissingDep(folder, outputFile)
 
 def detectInsufficientMod(folder, outputFile):
     detectInsufficientModForm1(folder, outputFile)
@@ -21,9 +20,6 @@ def detectUnstructuredMod(folder, outputFile):
     detectUnstructuredModForm3(folder, outputFile)
 
 def detectTightlyCoupledMod(folder, outputFile):
-    pass
-
-def detectMissingDep(folder, outputFile):
     pass
 
 #Form 1 - If a file contains declaration of more than one class/define

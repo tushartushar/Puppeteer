@@ -191,6 +191,17 @@ class SM_File:
 
         return exElementList
 
+    def getIncludeModules(self):
+        compiledRE = re.compile(SMCONSTS.INCLUDE_REGEX)
+        includeModuleList = []
+        for match in (compiledRE.findall(self.fileText)):
+            includeModuleText = self.extractResourceText(match)
+            Utilities.myPrint("Extracted include declaration: " + includeModuleText)
+            includeResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(includeResourceText)
+            includeModuleList.append(packageResourceObj)
+        return includeResourceList
+
+
     def extractElementText(self, initialString):
         compiledRE1 = re.compile(r'\{')
         compiledRE2 = re.compile(r'\}')
@@ -238,6 +249,8 @@ class SM_File:
             return SourceModel.SM_PackageResource.SM_PackageResource(elementText)
         if regex == SMCONSTS.SERVICE_REGEX:
             return SourceModel.SM_ServiceResource.SM_ServiceResource(elementText)
+        if regex == SMCONSTS.INCLUDE_REGEX:
+            return SourceModel.SM_IncludeResource.SM_IncludeResource(elementText)
         if regex == SMCONSTS.IF_REGEX:
             return SourceModel.SM_IfStmt.SM_IfStmt(elementText)
         if regex == SMCONSTS.CASE_REGEX:
