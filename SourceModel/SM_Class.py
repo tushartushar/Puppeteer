@@ -78,3 +78,44 @@ class SM_Class(SourceModel.SM_Element.SM_Element):
     def countEntityDeclaration(self, regEx, entityType):
         compiledRE = re.compile(regEx)
         return len(compiledRE.findall(self.resourceBodyText))
+
+    def getClassHierarchyInfo(self):
+        match = re.search(SMCONSTS.CLASS_GROUP_REGEX, self.resourceText)
+        clsName = ""
+        pClsName = ""
+        if match:
+            clsName = match.group(1)
+
+        match = re.search(SMCONSTS.CLASS_INH_REGEX, self.resourceText)
+        if match:
+            pClsName = match.group(1)
+            #print(clsName + " inherits " + pClsName)
+        return clsName, pClsName
+
+    def getResourceName(self):
+        match = re.search(SMCONSTS.CLASS_GROUP_REGEX, self.resourceText)
+        name =""
+        if match:
+            name = match.group(1)
+        return str(name)
+
+    def getDependentResource(self):
+        resultList = []
+        self.getDependentResource_(resultList, SMCONSTS.DEPENDENT_PACKAGE, SMCONSTS.DEPENDENT_GROUP_PACKAGE, SMCONSTS.PACKAGE)
+        self.getDependentResource_(resultList, SMCONSTS.DEPENDENT_SERVICE, SMCONSTS.DEPENDENT_GROUP_SERVICE, SMCONSTS.SERVICE)
+        self.getDependentResource_(resultList, SMCONSTS.DEPENDENT_FILE, SMCONSTS.DEPENDENT_GROUP_FILE, SMCONSTS.FILE)
+        self.getDependentResource_(resultList, SMCONSTS.DEPENDENT_CLASS, SMCONSTS.DEPENDENT_GROUP_CLASS, SMCONSTS.CLASS)
+
+        return resultList
+
+    def getDependentResource_(self, resultList, regex, groupRegex, entity):
+        compiledRE = re.compile(regex)
+        for depItem in compiledRE.findall(self.resourceText):
+            match = re.search(groupRegex, depItem)
+            if match:
+                name = match.group(1)
+                if name.startswith(":"):
+                    clsName, pClasName = self.getClassHierarchyInfo()
+                    if pClasName:
+                        name = pClasName + name
+                resultList.append((name, entity))

@@ -4,7 +4,7 @@ REPO_ROOT = "/Users/%s/Documents/Research/PuppetQuality/Repos" % getuser()
 AGGREGATOR_FILE = "AggregatedOutput.csv"
 CSV_HEADER = "Repo_name,PuppetFileCount,ClassCount,DefineCount,FileResourceCount,PackageResourceCount,\
                      ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs,MissingAbs,\
-                     InsufficientMod,UnstructuredMod\n"
+                     InsufficientMod,UnstructuredMod,TightlyCoupledMod,DuplicateAbs,BrokenHie,HairballStr\n"
 PUPPETEER_OUT_FILE = "Puppeteer_output.txt"
 PUPPET_FILE_COUNT = "Puppet file count: "
 TOTAL_CLASS_DECLS = "Total class declarations: "
@@ -28,12 +28,18 @@ SMELL_INS_MOD_3 = "Insufficient Modularization - Form 3"
 SMELL_UNS_MOD_1 = "Unstructured Module - Form 1"
 SMELL_UNS_MOD_2 = "Unstructured Module - Form 2"
 SMELL_UNS_MOD_3 = "Unstructured Module - Form 3"
+SMELL_TC_MOD = "Tightly-coupled Module"
+SMELL_DUP_ABS = "Duplicate Abstraction"
+SMELL_BRO_HIE = "Broken Hierarchy"
+SMELL_HAI_STR = "Hairball Structure"
 
 FILE_RES = " File "
 SERVICE_RES = " Service "
 PACKAGE_RES = " Package "
 CLASS_RES = " Class "
 DEFINE_RES = " Define "
+MODULE_RES = " Module "
+REPO_RES = " Repo "
 REPO_MANIFEST = " Manifest(Repo) "
 MODULE_MANIFEST = " Manifest(Module) "
 OTHERFILES = " Others "
@@ -53,3 +59,4 @@ MAX_MODULE_LOC_THRESHOLD = MAX_CLASS_LOC_THRESHOLD * 2
 MAX_NESTING_DEPTH = 3
 MAX_MANIFESTS_PUPPET_FILES = 5
 MAX_ALLOWED_NONSTANDARD_FILES = 3
+MAX_GRAPH_DEGREE_THRESHOLD = 1.0

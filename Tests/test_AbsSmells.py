@@ -134,3 +134,12 @@ class TestAbsSmells(TestCase):
         outFile.close()
         outFileRead = open(testFile, 'r')
         self.assertEquals(len(outFileRead.read()), 0)
+
+    def test_detectDuplicateAbs(self):
+        folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/cmits/"
+        outFileName = "tmp/duplicateAbsTest.txt"
+        outFile = open(outFileName, 'w')
+        AbsSmellDectector.detectDuplicateAbs(folderName, outFile)
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)

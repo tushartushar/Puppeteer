@@ -81,16 +81,24 @@ class SM_File:
         return fileResourceList
 
     def extractResourceText(self, initialString):
-        compiledRE1 = re.compile(r'\{')
-        compiledRE2 = re.compile(r'\}')
-        curBracketCount = len(compiledRE1.findall(initialString)) - len(compiledRE2.findall(initialString))
-        if curBracketCount <= 0:
-            return initialString
         index = self.fileText.find(initialString)
         if index < 0:
             return initialString
 
+        compiledRE1 = re.compile(r'\{')
+        compiledRE2 = re.compile(r'\}')
+        curBracketCount = len(compiledRE1.findall(initialString)) - len(compiledRE2.findall(initialString))
+
         curIndex = index + len(initialString) + 1
+        if curBracketCount == 0:
+            #This is to find the first "{" since currently there is no { which may happen in case of multi-line def
+            found = False
+            while curIndex < len(self.fileText) and not found:
+                if self.fileText[curIndex] == '{':
+                    found = True
+                    curBracketCount = 1
+                curIndex += 1
+
         while curBracketCount > 0 and curIndex < len(self.fileText):
             if self.fileText[curIndex] == '}':
                 curBracketCount -= 1
@@ -304,6 +312,30 @@ class SM_File:
             curIndex +=1
 
         return maxNestingDepth
+
+    def getHardCodedStatments(self):
+        compiledRE = re.compile(SMCONSTS.HARDCODED_VALUE_REGEX)
+        hardCodedStmtList = compiledRE.findall(self.fileText)
+        filteredList = []
+        for item in hardCodedStmtList:
+            #print(item)
+            if not (item.__contains__("$") or item.__contains__("Package") or item.__contains__("Service") \
+                    or item.__contains__("File")):
+                filteredList.append(item)
+        #print(filteredList)
+        return filteredList
+
+    def getClassHierarchyInfo(self):
+        classDecls = self.getClassDeclarationList()
+        classList = []
+        parentClassList = []
+        for aClass in classDecls:
+            classes, pClasses = aClass.getClassHierarchyInfo()
+            if len(classes) > 0:
+                classList.append(classes)
+            if len(pClasses) > 0:
+                parentClassList.append(pClasses)
+        return classList, parentClassList
 
 class ExElement(object):
     def __init__(self, elementObj, startIndex, endIndex):

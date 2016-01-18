@@ -15,6 +15,10 @@ def aggregate(folder, name, outFile):
     misAbsSmellCount = 0
     insModSmellCount = 0
     unsModSmellCount = 0
+    tcModSmellCount = 0
+    dupAbsSmellCount = 0
+    broHieSmellCount = 0
+    haiStrSmellCount = 0
     with open(folder + "/" + CONSTS.PUPPETEER_OUT_FILE, 'rt', errors='ignore') as curFile:
         for line in curFile:
             fileCount = getFileCount(fileCount, line)
@@ -31,12 +35,42 @@ def aggregate(folder, name, outFile):
             misAbsSmellCount = getMisAbsSmellCount(misAbsSmellCount, line)
             insModSmellCount = getInsModSmellCount(insModSmellCount, line)
             unsModSmellCount = getUnsModSmellCount(unsModSmellCount, line)
+            tcModSmellCount = getTCModSmellCount(tcModSmellCount, line)
+            dupAbsSmellCount = getDupAbsSmellCount(dupAbsSmellCount, line)
+            broHieSmellCount = getBroHieSmellCount(broHieSmellCount, line)
+            haiStrSmellCount = getHaiStrSmellCount(haiStrSmellCount, line)
 
     outFile.write(name + "," + str(fileCount) + "," + str(classCount) + "," + str(defineCount) + "," + str(fileResourceCount) +
                   "," + str(packageCount) + "," + str(serviceCount) + "," + str(execCount) + "," + str(LOCCount) + "," +
                   str(multiAbsSmellCount) + "," + str(unnAbsSmellCount) + "," + str(impAbsSmellCount) + "," +
-                  str(misAbsSmellCount) + "," + str(insModSmellCount) + "," + str(unsModSmellCount))
+                  str(misAbsSmellCount) + "," + str(insModSmellCount) + "," + str(unsModSmellCount) + "," +
+                  str(tcModSmellCount) + "," + str(dupAbsSmellCount) + "," + str(broHieSmellCount) + "," +
+                  str(haiStrSmellCount))
     outFile.write("\n")
+
+def getHaiStrSmellCount(haiStrSmellCount, line):
+    haiStrSmellIndex = line.find(CONSTS.SMELL_HAI_STR)
+    if haiStrSmellIndex >= 0:
+        haiStrSmellCount += 1
+    return haiStrSmellCount
+
+def getBroHieSmellCount(broHieSmellCount, line):
+    broHieSmellIndex = line.find(CONSTS.SMELL_BRO_HIE)
+    if broHieSmellIndex >= 0:
+        broHieSmellCount += 1
+    return broHieSmellCount
+
+def getDupAbsSmellCount(dupAbsSmellCount, line):
+    dupAbsSmellIndex = line.find((CONSTS.SMELL_DUP_ABS))
+    if dupAbsSmellIndex >= 0:
+        dupAbsSmellCount += 1
+    return dupAbsSmellCount
+
+def getTCModSmellCount(tcModSmellCount, line):
+    tcModSmellIndex = line.find((CONSTS.SMELL_TC_MOD))
+    if tcModSmellIndex >= 0:
+        tcModSmellCount += 1
+    return tcModSmellCount
 
 def getUnsModSmellCount(unsModSmellCount, line):
     unsModSmellIndex = line.find(CONSTS.SMELL_UNS_MOD_1)

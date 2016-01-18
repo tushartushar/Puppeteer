@@ -2,6 +2,7 @@ import os
 import SourceModel.SM_File
 import Utilities
 import Constants as CONSTS
+import re
 
 def detectSmells(folder, outputFile):
     detectMultifacetedAbs(folder, outputFile)
@@ -40,9 +41,22 @@ def detectImpAbs(fileObj, outputFile):
             execDecls) and execDecls > CONSTS.IMPABS_MAXEXECCOUNT:
         Utilities.reportSmell(outputFile, fileObj.fileName, CONSTS.SMELL_IMP_ABS, CONSTS.FILE_RES)
 
-
+# In order to detect duplicate abstraction smell, we first run cpd on all repositories (repo wise) and the result
+# must be stored at the root of each repo in a file ending with "cpd.xml"
 def detectDuplicateAbs(folder, outputFile):
-    pass
+    cpdXmlFile = getCpdXmlFile(folder)
+    if cpdXmlFile:
+        file = open(os.path.join(folder, cpdXmlFile), 'r', errors='ignore')
+        fileContent = file.read()
+        compiledRE = re.compile("<duplication lines=")
+        for i in re.findall(compiledRE, fileContent):
+            Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_DUP_ABS, CONSTS.FILE_RES)
+
+def getCpdXmlFile(folder):
+    for aFile in os.listdir(folder):
+        if aFile.endswith("cpd.xml"):
+            return aFile
+    return ""
 
 def detectMissingAbs(folder, outputFile):
     for root, dirs, files in os.walk(folder):
