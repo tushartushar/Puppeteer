@@ -17,6 +17,7 @@ def aggregate(folder, name, outFile):
     unsModSmellCount = 0
     tcModSmellCount = 0
     dupAbsSmellCount = 0
+    misDepSmellCount = 0
     broHieSmellCount = 0
     haiStrSmellCount = 0
     defEncSmellCount = 0
@@ -38,6 +39,7 @@ def aggregate(folder, name, outFile):
             unsModSmellCount = getUnsModSmellCount(unsModSmellCount, line)
             tcModSmellCount = getTCModSmellCount(tcModSmellCount, line)
             dupAbsSmellCount = getDupAbsSmellCount(dupAbsSmellCount, line)
+            misDepSmellCount = getMisDepSmellCount(misDepSmellCount, line)
             broHieSmellCount = getBroHieSmellCount(broHieSmellCount, line)
             haiStrSmellCount = getHaiStrSmellCount(haiStrSmellCount, line)
             defEncSmellCount = getDefEncSmellCount(defEncSmellCount, line)
@@ -46,8 +48,9 @@ def aggregate(folder, name, outFile):
                   "," + str(packageCount) + "," + str(serviceCount) + "," + str(execCount) + "," + str(LOCCount) + "," +
                   str(multiAbsSmellCount) + "," + str(unnAbsSmellCount) + "," + str(impAbsSmellCount) + "," +
                   str(misAbsSmellCount) + "," + str(insModSmellCount) + "," + str(unsModSmellCount) + "," +
-                  str(tcModSmellCount) + "," + str(dupAbsSmellCount) + "," + str(broHieSmellCount) + "," +
+                  str(tcModSmellCount) + "," + str(dupAbsSmellCount) + "," + str(misDepSmellCount) + ',' + str(broHieSmellCount) + "," +
                   str(haiStrSmellCount) + "," + str(defEncSmellCount))
+
     outFile.write("\n")
 
 def getDefEncSmellCount(defEncSmellCount, line):
@@ -67,6 +70,12 @@ def getBroHieSmellCount(broHieSmellCount, line):
     if broHieSmellIndex >= 0:
         broHieSmellCount += 1
     return broHieSmellCount
+
+def getMisDepSmellCount(misDepSmellCount, line):
+    misDepSmellIndex = line.find(CONSTS.SMELL_MIS_DEP)
+    if misDepSmellIndex >= 0:
+        misDepSmellCount += 1
+    return misDepSmellCount
 
 def getDupAbsSmellCount(dupAbsSmellCount, line):
     dupAbsSmellIndex = line.find((CONSTS.SMELL_DUP_ABS))

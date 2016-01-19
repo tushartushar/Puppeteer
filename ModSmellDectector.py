@@ -12,7 +12,6 @@ def detectSmells(folder, outputFile):
     detectInsufficientMod(folder, outputFile)
     detectUnstructuredMod(folder, outputFile)
     detectTightlyCoupledMod(folder, outputFile)
-    detectMissingDep(folder, outputFile)
     detectHairballStr(folder, outputFile)
 
 def detectInsufficientMod(folder, outputFile):
@@ -31,9 +30,6 @@ def detectTightlyCoupledMod(folder, outputFile):
             if file.endswith(".pp"):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectTCMod(fileObj, outputFile)
-
-def detectMissingDep(folder, outputFile):
-    pass
 
 def detectHairballStr(folder, outputFile):
     graph = getGraph(folder)

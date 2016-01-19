@@ -3,6 +3,7 @@ import Utilities
 import SourceModel.SM_FileResource
 import SourceModel.SM_ServiceResource
 import SourceModel.SM_PackageResource
+import SourceModel.SM_IncludeResource
 import SourceModel.SM_Class
 import SourceModel.SM_LCOM
 import SourceModel.SM_Define
@@ -131,11 +132,14 @@ class SM_File:
 
     def getClassDeclarationList(self):
         compiledRE = re.compile(SMCONSTS.CLASS_REGEX)
+        compiledClassNameRE = re.compile(SMCONSTS.CLASS_NAME_REGEX)
         classList = []
         for match in compiledRE.findall(self.fileText):
+            className = compiledClassNameRE.findall(match)[0]
+            #print("Class name: %s" % (className))
             classText = self.extractResourceText(match)
             Utilities.myPrint("Extracted class declaration: " + classText)
-            classObj = SourceModel.SM_Class.SM_Class(classText)
+            classObj = SourceModel.SM_Class.SM_Class(classText, className)
             classList.append(classObj)
         return classList
 
@@ -200,6 +204,20 @@ class SM_File:
 
         return exElementList
 
+    def getIncludeClasses(self):
+        compiledRE = re.compile(SMCONSTS.INCLUDE_REGEX)
+        compiledNameRE = re.compile(SMCONSTS.INCLUDE_NAME_REGEX)
+        includeClassList = []
+        for match in (compiledRE.findall(self.fileText)):
+            includeClassName = compiledNameRE.findall(match)[0]
+            includeClassText = self.extractResourceText(match)
+            #print("Include class name: %s" % includeClassName)
+            Utilities.myPrint("Extracted include declaration: " + includeClassText)
+            includeResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(includeClassText, includeClassName)
+            includeClassList.append(includeResourceObj)
+        return includeClassList
+
+
     def extractElementText(self, initialString):
         compiledRE1 = re.compile(r'\{')
         compiledRE2 = re.compile(r'\}')
@@ -247,6 +265,8 @@ class SM_File:
             return SourceModel.SM_PackageResource.SM_PackageResource(elementText)
         if regex == SMCONSTS.SERVICE_REGEX:
             return SourceModel.SM_ServiceResource.SM_ServiceResource(elementText)
+        if regex == SMCONSTS.INCLUDE_REGEX:
+            return SourceModel.SM_IncludeResource.SM_IncludeResource(elementText)
         if regex == SMCONSTS.IF_REGEX:
             return SourceModel.SM_IfStmt.SM_IfStmt(elementText)
         if regex == SMCONSTS.CASE_REGEX:

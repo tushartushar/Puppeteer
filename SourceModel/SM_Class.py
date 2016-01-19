@@ -14,8 +14,9 @@ import SourceModel.SM_LCOM
 import SourceModel.SM_File
 
 class SM_Class(SourceModel.SM_Element.SM_Element):
-    def __init__(self, text):
+    def __init__(self, text, name=None):
         self.resourceText = text
+        self.className = name
         self.resourceBodyText = self.extractBodyText(text)
         super().__init__(text)
 
