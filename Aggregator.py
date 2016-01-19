@@ -19,6 +19,7 @@ def aggregate(folder, name, outFile):
     dupAbsSmellCount = 0
     broHieSmellCount = 0
     haiStrSmellCount = 0
+    defEncSmellCount = 0
     with open(folder + "/" + CONSTS.PUPPETEER_OUT_FILE, 'rt', errors='ignore') as curFile:
         for line in curFile:
             fileCount = getFileCount(fileCount, line)
@@ -39,14 +40,21 @@ def aggregate(folder, name, outFile):
             dupAbsSmellCount = getDupAbsSmellCount(dupAbsSmellCount, line)
             broHieSmellCount = getBroHieSmellCount(broHieSmellCount, line)
             haiStrSmellCount = getHaiStrSmellCount(haiStrSmellCount, line)
+            defEncSmellCount = getDefEncSmellCount(defEncSmellCount, line)
 
     outFile.write(name + "," + str(fileCount) + "," + str(classCount) + "," + str(defineCount) + "," + str(fileResourceCount) +
                   "," + str(packageCount) + "," + str(serviceCount) + "," + str(execCount) + "," + str(LOCCount) + "," +
                   str(multiAbsSmellCount) + "," + str(unnAbsSmellCount) + "," + str(impAbsSmellCount) + "," +
                   str(misAbsSmellCount) + "," + str(insModSmellCount) + "," + str(unsModSmellCount) + "," +
                   str(tcModSmellCount) + "," + str(dupAbsSmellCount) + "," + str(broHieSmellCount) + "," +
-                  str(haiStrSmellCount))
+                  str(haiStrSmellCount) + "," + str(defEncSmellCount))
     outFile.write("\n")
+
+def getDefEncSmellCount(defEncSmellCount, line):
+    defEndSmellIndex = line.find(CONSTS.SMELL_DEF_ENC)
+    if defEndSmellIndex >= 0:
+        defEncSmellCount += 1
+    return defEncSmellCount
 
 def getHaiStrSmellCount(haiStrSmellCount, line):
     haiStrSmellIndex = line.find(CONSTS.SMELL_HAI_STR)

@@ -11,6 +11,8 @@ USER_REGEX = r'user\W*\{\W*.+:'
 COMMENT_REGEX = r'\A#|\n#'
 HARDCODED_VALUE_REGEX = r'= \d+|=> \d+|= .*\'.+?\s*(?:\(.+\)\s*)*\'|=> .*\'.+?\s*(?:\(.+\)\s*)*\'|' \
                         r'= .*\".+?\s*(?:\(.+\)\s*)*\"|=> .*\".+\s*(?:\(.+\)\s*)*\"'
+NODE_REGEX = r'node\W*\w+(?:\:\:\w+)*\W+\{'
+GLOBAL_VAR_REGEX = r'\$.+\W*='
 
 CLASS_GROUP_REGEX = r'class (\w+(?:\:\:\w+)*)\s*(?:\(.+\)\s*)*{*'
 CLASS_INH_REGEX = r'inherits (\w+(?:\:\:\w+)*){*'

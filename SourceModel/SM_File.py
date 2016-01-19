@@ -13,6 +13,7 @@ import SourceModel.SM_CaseStmt
 import SourceModel.SM_IfStmt
 import SourceModel.SM_User
 import SourceModel.SM_Element
+import SourceModel.SM_Node
 
 
 class SM_File:
@@ -323,6 +324,16 @@ class SM_File:
             if len(pClasses) > 0:
                 parentClassList.append(pClasses)
         return classList, parentClassList
+
+    def getNodeDeclarations(self):
+        compiledRE = re.compile(SMCONSTS.NODE_REGEX)
+        nodeResourceList = []
+        for match in (compiledRE.findall(self.fileText)):
+            nodeResourceText = self.extractResourceText(match)
+            Utilities.myPrint("Extracted node declaration: " + nodeResourceText)
+            nodeResourceObj = SourceModel.SM_Node.SM_Node(nodeResourceText)
+            nodeResourceList.append(nodeResourceObj)
+        return nodeResourceList
 
 class ExElement(object):
     def __init__(self, elementObj, startIndex, endIndex):
