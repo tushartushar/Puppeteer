@@ -3,8 +3,9 @@ import Utilities
 import SourceModel.SM_Element
 
 class SM_IncludeResource(SourceModel.SM_Element.SM_Element):
-    def __init__(self, text):
+    def __init__(self, text, name=None):
         self.resourceText = text
+        self.className = name
         super().__init__(text)
 
     def getUsedVariables(self):

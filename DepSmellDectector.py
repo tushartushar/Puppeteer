@@ -3,6 +3,7 @@ import os
 import SourceModel.SM_File
 import Constants as CONSTS
 import FileOperations
+import inspect
 
 def detectSmells(folder, outputFile):
     detectMissingDep(folder, outputFile)
@@ -10,15 +11,36 @@ def detectSmells(folder, outputFile):
 def detectMissingDep(folder, outputFile):
     detectMissingModules(folder, outputFile)
 
-def detectMissingModules(folder, output):
-    abspath, dirs, files = os.walk(folder)
-    availableModules = []
-    if 'modules' in dirs:
-        xpath, availableModules, xfiles = os.walk(os.path.join(folder, 'modules'))
-    for file in files:
-        if file.endswith(".pp"):
-            fileObj = SourceModel.SM_File.SM_File(os.path.join(abspath, file))
-            detectMissingModulesByInclude(fileObj, outputFile)
+def detectMissingModules(folder, outputFile):
+    #print("%s" % (inspect.stack()[0][3]))
+    classNamesSet = set()
+    includeClassSet = set()
+    for abspath, dirs, files in os.walk(folder):
+        for file in files:
+            #print(file)
+            if file.endswith(".pp"):
+                #print(file)
+                fileObj = SourceModel.SM_File.SM_File(os.path.join(abspath, file))
+                classNames, fileIncludes = detectMissingClassesByInclude(fileObj, outputFile)
+                #print("Classes: %s" % ','.join(n for n in classNames))
+                classNamesSet = classNamesSet.union(classNames)
+                #print("Union with %s: %s" % (','.join(n for n in classNames), ','.join(n for n in classNamesSet)))
+                includeClassSet = includeClassSet.union(fileIncludes)
+    #print("%s: Classes: %s" % (inspect.stack()[0][3], ','.join(n for n in classNamesSet)))
+    #print("%s: Class includes: %s" % (inspect.stack()[0][3], ','.join(i for i in includeClassSet)))
+    missingDependencySet = includeClassSet.difference(classNamesSet)
+    print("Missing dependency set: %s" % ','.join(c for c in missingDependencySet))
+    for md in missingDependencySet:
+        Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_MIS_DEP, CONSTS.FILE_RES)
 
-def detectMissingModulesByInclude(fileObj, output):
-    includeModuleList = fileObj.getIncludeModules()     
+def detectMissingClassesByInclude(fileObj, outputFile):
+    #print("%s" % (inspect.stack()[0][3]))
+    classList = fileObj.getClassDeclarationList()
+    #print("%s: All names: %s" % (inspect.stack()[0][3], ','.join(c.className for c in classList)))
+    classNames = {c.className for c in classList}
+    #print("%s: Class names: %s" % (inspect.stack()[0][3], ','.join(n for n in classNames)))
+    includeClassList = fileObj.getIncludeClasses()
+    includeClassNames = {i.className for i in includeClassList}
+    #print("%s: Class include: %s" % (inspect.stack()[0][3], ','.join(i for i in includeClassNames)))
+    #exit(1)
+    return classNames, includeClassNames

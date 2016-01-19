@@ -3,6 +3,7 @@ import Utilities
 import SourceModel.SM_FileResource
 import SourceModel.SM_ServiceResource
 import SourceModel.SM_PackageResource
+import SourceModel.SM_IncludeResource
 import SourceModel.SM_Class
 import SourceModel.SM_LCOM
 import SourceModel.SM_Define
@@ -130,11 +131,14 @@ class SM_File:
 
     def getClassDeclarationList(self):
         compiledRE = re.compile(SMCONSTS.CLASS_REGEX)
+        compiledClassNameRE = re.compile(SMCONSTS.CLASS_NAME_REGEX)
         classList = []
         for match in compiledRE.findall(self.fileText):
+            className = compiledClassNameRE.findall(match)[0]
+            #print("Class name: %s" % (className))
             classText = self.extractResourceText(match)
             Utilities.myPrint("Extracted class declaration: " + classText)
-            classObj = SourceModel.SM_Class.SM_Class(classText)
+            classObj = SourceModel.SM_Class.SM_Class(classText, className)
             classList.append(classObj)
         return classList
 
@@ -199,15 +203,18 @@ class SM_File:
 
         return exElementList
 
-    def getIncludeModules(self):
+    def getIncludeClasses(self):
         compiledRE = re.compile(SMCONSTS.INCLUDE_REGEX)
-        includeModuleList = []
+        compiledNameRE = re.compile(SMCONSTS.INCLUDE_NAME_REGEX)
+        includeClassList = []
         for match in (compiledRE.findall(self.fileText)):
-            includeModuleText = self.extractResourceText(match)
-            Utilities.myPrint("Extracted include declaration: " + includeModuleText)
-            includeResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(includeResourceText)
-            includeModuleList.append(packageResourceObj)
-        return includeResourceList
+            includeClassName = compiledNameRE.findall(match)[0]
+            includeClassText = self.extractResourceText(match)
+            #print("Include class name: %s" % includeClassName)
+            Utilities.myPrint("Extracted include declaration: " + includeClassText)
+            includeResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(includeClassText, includeClassName)
+            includeClassList.append(includeResourceObj)
+        return includeClassList
 
 
     def extractElementText(self, initialString):

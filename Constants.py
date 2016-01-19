@@ -4,7 +4,7 @@ REPO_ROOT = "/Users/%s/Documents/Research/PuppetQuality/Repos" % getuser()
 AGGREGATOR_FILE = "AggregatedOutput.csv"
 CSV_HEADER = "Repo_name,PuppetFileCount,ClassCount,DefineCount,FileResourceCount,PackageResourceCount,\
                      ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs,MissingAbs,\
-                     InsufficientMod,UnstructuredMod,TightlyCoupledMod,DuplicateAbs,BrokenHie,HairballStr\n"
+                     InsufficientMod,UnstructuredMod,TightlyCoupledMod,DuplicateAbs,MissingDep,BrokenHie,HairballStr\n"
 PUPPETEER_OUT_FILE = "Puppeteer_output.txt"
 PUPPET_FILE_COUNT = "Puppet file count: "
 TOTAL_CLASS_DECLS = "Total class declarations: "
@@ -31,6 +31,7 @@ SMELL_UNS_MOD_3 = "Unstructured Module - Form 3"
 SMELL_TC_MOD = "Tightly-coupled Module"
 SMELL_DUP_ABS = "Duplicate Abstraction"
 SMELL_BRO_HIE = "Broken Hierarchy"
+SMELL_MIS_DEP = "Missing Dependency"
 SMELL_HAI_STR = "Hairball Structure"
 
 FILE_RES = " File "
