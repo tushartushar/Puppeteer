@@ -12,7 +12,8 @@ def detectSmells(folder, outputFile):
     detectInsufficientMod(folder, outputFile)
     detectUnstructuredMod(folder, outputFile)
     detectTightlyCoupledMod(folder, outputFile)
-    detectHairballStr(folder, outputFile)
+    detectHairballStrAndWeakendMod(folder, outputFile)
+
 
 def detectInsufficientMod(folder, outputFile):
     detectInsufficientModForm1(folder, outputFile)
@@ -31,9 +32,10 @@ def detectTightlyCoupledMod(folder, outputFile):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectTCMod(fileObj, outputFile)
 
-def detectHairballStr(folder, outputFile):
+def detectHairballStrAndWeakendMod(folder, outputFile):
     graph = getGraph(folder)
     detectHaiStr(graph, folder, outputFile) #Excessive avg dependency
+    detectWeakendMod(graph, folder, outputFile) #modularity ratio
 
 #Form 1 - If a file contains declaration of more than one class/define
 def detectInsufficientModForm1(folder, outputFile):
@@ -265,6 +267,7 @@ def searchDependentNode(graph, node, name, type):
     #print("Looking for Name: " + name + " Type: " + type)
     for res in node.getResources():
         if res.name == name and res.type == type:
+            node.addInternalDependency()
             #print("found")
             return node
 
@@ -272,12 +275,14 @@ def searchDependentNode(graph, node, name, type):
         for res in aNode.getResources():
             if res.name == name and res.type == type:
                 #print("Found")
+                node.addExternalDependency()
                 return aNode
     #Okay, so we have not found the node i.e. it is an external dependency.
     #In this case, we will create a graph node to capture the dependency.
     newNode = Graph.GraphNode.GraphNode(name)
     newNode.addResource(name, type)
     graph.addNode(newNode)
+    node.addExternalDependency()
     #print("Found_New")
     return newNode
 
@@ -298,3 +303,8 @@ def addGraphEdgesFromRestPuppetFiles(folder, graph):
 def detectHaiStr(graph, folder, outputFile):
     if graph.getAverageDegree() > CONSTS.MAX_GRAPH_DEGREE_THRESHOLD:
         Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_HAI_STR, CONSTS.REPO_RES)
+
+def detectWeakendMod(graph, folder, outputFile):
+    for node in graph.getNodes():
+        if node.getModularityRatio() < CONSTS.MODULARITY_THRESHOLD:
+            Utilities.reportSmell(outputFile, str(node.getId()), CONSTS.SMELL_WEA_MOD, CONSTS.MODULE_RES)

@@ -21,6 +21,7 @@ def aggregate(folder, name, outFile):
     broHieSmellCount = 0
     haiStrSmellCount = 0
     defEncSmellCount = 0
+    weaModSmellCount = 0
     with open(folder + "/" + CONSTS.PUPPETEER_OUT_FILE, 'rt', errors='ignore') as curFile:
         for line in curFile:
             fileCount = getFileCount(fileCount, line)
@@ -43,15 +44,22 @@ def aggregate(folder, name, outFile):
             broHieSmellCount = getBroHieSmellCount(broHieSmellCount, line)
             haiStrSmellCount = getHaiStrSmellCount(haiStrSmellCount, line)
             defEncSmellCount = getDefEncSmellCount(defEncSmellCount, line)
+            weaModSmellCount = getWeaModSmellCount(weaModSmellCount, line)
 
     outFile.write(name + "," + str(fileCount) + "," + str(classCount) + "," + str(defineCount) + "," + str(fileResourceCount) +
                   "," + str(packageCount) + "," + str(serviceCount) + "," + str(execCount) + "," + str(LOCCount) + "," +
                   str(multiAbsSmellCount) + "," + str(unnAbsSmellCount) + "," + str(impAbsSmellCount) + "," +
                   str(misAbsSmellCount) + "," + str(insModSmellCount) + "," + str(unsModSmellCount) + "," +
                   str(tcModSmellCount) + "," + str(dupAbsSmellCount) + "," + str(misDepSmellCount) + ',' + str(broHieSmellCount) + "," +
-                  str(haiStrSmellCount) + "," + str(defEncSmellCount))
+                  str(haiStrSmellCount) + "," + str(defEncSmellCount) + "," + str(weaModSmellCount))
 
     outFile.write("\n")
+
+def getWeaModSmellCount(weaModSmellCount, line):
+    weaModSmellIndex = line.find(CONSTS.SMELL_WEA_MOD)
+    if weaModSmellIndex >= 0:
+        weaModSmellCount += 1
+    return weaModSmellCount
 
 def getDefEncSmellCount(defEncSmellCount, line):
     defEndSmellIndex = line.find(CONSTS.SMELL_DEF_ENC)

@@ -5,7 +5,7 @@ AGGREGATOR_FILE = "AggregatedOutput.csv"
 CSV_HEADER = "Repo_name,PuppetFileCount,ClassCount,DefineCount,FileResourceCount,PackageResourceCount,\
 ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs,MissingAbs,\
 InsufficientMod,UnstructuredMod,TightlyCoupledMod,DuplicateAbs,MissingDep,BrokenHie,HairballStr,\
-DeficientEnc\n"
+DeficientEnc,WeakendMod\n"
 
 PUPPETEER_OUT_FILE = "Puppeteer_output.txt"
 PUPPET_FILE_COUNT = "Puppet file count: "
@@ -36,6 +36,7 @@ SMELL_BRO_HIE = "Broken Hierarchy"
 SMELL_MIS_DEP = "Missing Dependency"
 SMELL_HAI_STR = "Hairball Structure"
 SMELL_DEF_ENC = "Deficient Encapsulation"
+SMELL_WEA_MOD = "Weakend Modularity"
 
 FILE_RES = " File "
 SERVICE_RES = " Service "
@@ -65,3 +66,4 @@ MAX_NESTING_DEPTH = 3
 MAX_MANIFESTS_PUPPET_FILES = 5
 MAX_ALLOWED_NONSTANDARD_FILES = 3
 MAX_GRAPH_DEGREE_THRESHOLD = 1.0
+MODULARITY_THRESHOLD = 1.0

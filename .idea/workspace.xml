@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffb7069-d503-4cbd-b052-20347d7803e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DepSmellDectector.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SourceModel/SM_IncludeResource.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aggregator.py" afterPath="$PROJECT_DIR$/Aggregator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Constants.py" afterPath="$PROJECT_DIR$/Constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DepSmellDectector.py" afterPath="$PROJECT_DIR$/DepSmellDectector.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graph/GraphNode.py" afterPath="$PROJECT_DIR$/Graph/GraphNode.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ModSmellDectector.py" afterPath="$PROJECT_DIR$/ModSmellDectector.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmellDectector.py" afterPath="$PROJECT_DIR$/SmellDectector.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_Class.py" afterPath="$PROJECT_DIR$/SourceModel/SM_Class.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_Constants.py" afterPath="$PROJECT_DIR$/SourceModel/SM_Constants.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceModel/SM_File.py" afterPath="$PROJECT_DIR$/SourceModel/SM_File.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/test_ModSmells.py" afterPath="$PROJECT_DIR$/Tests/test_ModSmells.py" />
     </list>
     <ignored path="Puppeteer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Puppeteer.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Puppeteer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Puppeteer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.2877698">
               <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
               <folding />
             </state>
@@ -46,41 +43,24 @@
         <entry file="file://$PROJECT_DIR$/ModSmellDectector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="54" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="54" />
+              <caret line="36" column="16" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SmellDectector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SmellDectector.py">
+      <file leaf-file-name="test_ModSmells.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/test_ModSmells.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepSmellDectector.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DepSmellDectector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50359714">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EncSmellDectector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EncSmellDectector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#160#229#0" expanded="false" />
+                <element signature="e#1940#2412#0" expanded="false" />
+                <element signature="e#2984#3065#0" expanded="false" />
+                <element signature="e#3120#3496#0" expanded="false" />
+                <element signature="e#3973#4354#0" expanded="false" />
+                <element signature="e#4402#4788#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -90,39 +70,7 @@
         <entry file="file://$PROJECT_DIR$/Constants.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SM_File.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SourceModel/SM_File.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SM_Constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SourceModel/SM_Constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Aggregator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aggregator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="50" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="50" />
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -133,6 +81,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="5" column="14" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_EncSmells.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/test_EncSmells.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_HieSmells.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/test_HieSmells.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="11" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -179,18 +147,19 @@
         <option value="$PROJECT_DIR$/SourceModel/SM_FileResource.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_PackageResource.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_Class.py" />
-        <option value="$PROJECT_DIR$/ModSmellDectector.py" />
         <option value="$PROJECT_DIR$/Graph/Graph.py" />
-        <option value="$PROJECT_DIR$/Graph/GraphNode.py" />
         <option value="$PROJECT_DIR$/HieSmellDectector.py" />
-        <option value="$PROJECT_DIR$/Tests/test_ModSmells.py" />
         <option value="$PROJECT_DIR$/EncSmellDectector.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_Node.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_File.py" />
         <option value="$PROJECT_DIR$/Tests/test_EncSmells.py" />
         <option value="$PROJECT_DIR$/SourceModel/SM_Constants.py" />
-        <option value="$PROJECT_DIR$/Constants.py" />
+        <option value="$PROJECT_DIR$/DepSmellDectector.py" />
+        <option value="$PROJECT_DIR$/ModSmellDectector.py" />
         <option value="$PROJECT_DIR$/Aggregator.py" />
+        <option value="$PROJECT_DIR$/Graph/GraphNode.py" />
+        <option value="$PROJECT_DIR$/Constants.py" />
+        <option value="$PROJECT_DIR$/Tests/test_ModSmells.py" />
       </list>
     </option>
   </component>
@@ -296,21 +265,26 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Python.Puppeteer">
-    <configuration default="false" name="Puppeteer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="Unittests in TestModSmells (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
+      <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Puppeteer" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Puppeteer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test_ModSmells.py" />
+      <option name="CLASS_NAME" value="TestModSmells" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="Unittests in TestAbsSmells" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -379,26 +353,21 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in TestModSmells (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Puppeteer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Puppeteer" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test_ModSmells.py" />
-      <option name="CLASS_NAME" value="TestModSmells" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Puppeteer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -542,19 +511,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.AbsSmellDectector" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Puppeteer" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestModSmells (1)" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestAbsSmells" />
       <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestModSmells" />
       <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestHieSmells" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in TestModSmells (1)" />
+      <item index="5" class="java.lang.String" itemvalue="Python.Puppeteer" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Puppeteer" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestModSmells (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestHieSmells" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestModSmells" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestAbsSmells" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestHieSmells" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestModSmells" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestAbsSmells" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestModSmells (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -572,47 +541,48 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestModSmells_test_detectDefEnc - 2016.01.19 at 17h 13m 40s.xml">
-      <configuration name="Unittest TestModSmells.test_detectDefEnc" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestModSmells_test_detectDefEnc - 2016.01.19 at 17h 14m 02s.xml">
-      <configuration name="Unittest TestModSmells.test_detectDefEnc" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestModSmells_test_detectDefEnc - 2016.01.19 at 17h 14m 35s.xml">
-      <configuration name="Unittest TestModSmells.test_detectDefEnc" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestModSmells_test_detectDefEnc - 2016.01.19 at 17h 16m 06s.xml">
-      <configuration name="Unittest TestModSmells.test_detectDefEnc" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestModSmells_test_detectDefEnc - 2016.01.19 at 17h 20m 47s.xml">
-      <configuration name="Unittest TestModSmells.test_detectDefEnc" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestModSmells_test_detectDefEnc - 2016.01.19 at 17h 20m 56s.xml">
       <configuration name="Unittest TestModSmells.test_detectDefEnc" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittest_TestModSmells_test_detectWeakendMod - 2016.01.20 at 16h 43m 46s.xml">
+      <configuration name="Unittest TestModSmells.test_detectWeakendMod" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_TestAbsSmells - 2016.01.19 at 17h 50m 08s.xml">
+      <configuration name="Unittests in TestAbsSmells" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestAbsSmells - 2016.01.20 at 16h 44m 11s.xml">
       <configuration name="Unittests in TestAbsSmells" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_TestHieSmells - 2016.01.19 at 17h 50m 18s.xml">
       <configuration name="Unittests in TestHieSmells" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_TestHieSmells - 2016.01.20 at 16h 44m 22s.xml">
+      <configuration name="Unittests in TestHieSmells" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_TestModSmells - 2016.01.19 at 17h 50m 13s.xml">
+      <configuration name="Unittests in TestModSmells" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestModSmells - 2016.01.20 at 16h 44m 16s.xml">
       <configuration name="Unittests in TestModSmells" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_TestModSmells_(1) - 2016.01.19 at 17h 50m 30s.xml">
       <configuration name="Unittests in TestModSmells (1)" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_TestModSmells_(1) - 2016.01.20 at 16h 44m 01s.xml">
+      <configuration name="Unittests in TestModSmells (1)" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18515626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3046875" sideWeight="0.28984374" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3046875" sideWeight="0.29765624" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1375" sideWeight="0.7710937" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3046875" sideWeight="0.71015626" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3046875" sideWeight="0.70234376" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -622,7 +592,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1375" sideWeight="0.7757813" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -780,13 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AbsSmellDectector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SourceModel/SM_Define.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -843,24 +805,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Graph/GraphNode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Graph/Resource.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SourceModel/SM_FileResource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.111111">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -879,7 +827,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -927,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,33 +880,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AbsSmellDectector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30608696">
+          <caret line="65" column="28" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DepSmellDectector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8086957">
+          <caret line="31" column="95" selection-start-line="31" selection-start-column="95" selection-end-line="31" selection-end-column="95" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#16#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SmellDectector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15652174">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SourceModel/SM_FileResource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82824427">
+          <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SourceModel/SM_Constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.42938933">
+          <caret line="30" column="16" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EncSmellDectector.py">
+    <entry file="file://$PROJECT_DIR$/Aggregator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.77290076">
+          <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SourceModel/SM_File.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.9389313">
           <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -972,16 +946,49 @@
     <entry file="file://$PROJECT_DIR$/Constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aggregator.py">
+    <entry file="file://$PROJECT_DIR$/EncSmellDectector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45801526">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graph/GraphNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.629771">
+          <caret line="22" column="93" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModSmellDectector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="50" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="50" />
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/test_ModSmells.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#160#229#0" expanded="false" />
+            <element signature="e#1940#2412#0" expanded="false" />
+            <element signature="e#2984#3065#0" expanded="false" />
+            <element signature="e#3120#3496#0" expanded="false" />
+            <element signature="e#3973#4354#0" expanded="false" />
+            <element signature="e#4402#4788#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -993,71 +1000,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/test_HieSmells.py">
+    <entry file="file://$PROJECT_DIR$/Tests/test_EncSmells.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/test_ModSmells.py">
+    <entry file="file://$PROJECT_DIR$/Tests/test_HieSmells.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1438849">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#160#229#0" expanded="false" />
-            <element signature="e#1940#2412#0" expanded="false" />
-            <element signature="e#2984#3065#0" expanded="false" />
-            <element signature="e#3120#3496#0" expanded="false" />
-            <element signature="e#3973#4354#0" expanded="false" />
-            <element signature="e#4402#4788#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/test_EncSmells.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1438849">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Puppeteer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.2877698">
           <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModSmellDectector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="54" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmellDectector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DepSmellDectector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50359714">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

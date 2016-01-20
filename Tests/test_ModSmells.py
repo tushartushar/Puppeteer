@@ -116,7 +116,19 @@ class TestModSmells(TestCase):
         folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/operations-puppet/"
         outFileName = "tmp/getGraphTest.txt"
         outFile = open(outFileName, 'w')
-        graph = ModSmellDectector.detectHairballStr(folderName, outFile)
+        graph = ModSmellDectector.getGraph(folderName)
+        ModSmellDectector.detectHaiStr(graph, folderName, outFile)
+        #graph.printGraph()
+        outFile.close()
+        outFileRead = open(outFileName, 'r')
+        self.assertGreater(len(outFileRead.read()), 0)
+
+    def test_detectWeakendMod(self):
+        folderName = "/Users/Tushar/Documents/Research/PuppetQuality/Repos/devbox/modules/php/"
+        outFileName = "tmp/WeakendModTest.txt"
+        outFile = open(outFileName, 'w')
+        graph = ModSmellDectector.getGraph(folderName)
+        ModSmellDectector.detectWeakendMod(graph, folderName, outFile)
         #graph.printGraph()
         outFile.close()
         outFileRead = open(outFileName, 'r')
