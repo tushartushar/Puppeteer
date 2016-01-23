@@ -1,6 +1,6 @@
 from getpass import getuser
 
-REPO_ROOT = "/Users/%s/Documents/Research/PuppetQuality/Repos" % getuser()
+REPO_ROOT = "/Users/%s/Documents/Research/PuppetQuality/popularRepoStore" % getuser()
 AGGREGATOR_FILE = "AggregatedOutput.csv"
 CSV_HEADER = "Repo_name,PuppetFileCount,ClassCount,DefineCount,FileResourceCount,PackageResourceCount,\
 ServiceResourceCount,ExecCount,LOC,MultifacetedAbs,UnnecessaryAbs,ImperativeAbs,MissingAbs,\

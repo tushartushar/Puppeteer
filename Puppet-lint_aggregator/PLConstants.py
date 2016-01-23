@@ -56,7 +56,7 @@ RULE13_1 = "variable not enclosed in {}"
 HEADER = "RepoName,MissingDefault,InconsistentNaming,ComplexExpression,DuplicateEntity,MisplacedAttribute,ImproperAlignment,\
 InvalidProperty,IncompleteTasks,DeprecatedStatement,ImproperQuoteUsage,LongStatement,IncompleteConditional,UnguardedVariable\n"
 
-REPO_ROOT = "/Users/%s/Documents/Research/PuppetQuality/Repos" % getuser()
+REPO_ROOT = "/Users/%s/Documents/Research/PuppetQuality/popularRepoStore" % getuser()
 AGGREGATOR_FILE = "PuppetLintAggregatedOutput.csv"
 PUPPETLINT_OUT_FILE = "puppet-lint.log"
 

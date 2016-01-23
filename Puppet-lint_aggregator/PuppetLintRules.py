@@ -1,7 +1,7 @@
 import os
 import Analyzer
 import Aggregator
-import Constants as CONSTS
+import PLConstants as CONSTS
 
 root = CONSTS.REPO_ROOT
 print("Initiating Custom Puppet-Lint Analyzer...")
