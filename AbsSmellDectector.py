@@ -54,7 +54,7 @@ def detectDuplicateAbs(folder, outputFile):
 
 def getCpdXmlFile(folder):
     for aFile in os.listdir(folder):
-        if aFile.endswith("cpd.xml"):
+        if aFile == "cpd.xml":
             return aFile
     return ""
 
