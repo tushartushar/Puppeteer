@@ -29,6 +29,9 @@ def detectMissingModules(folder, outputFile):
     #print("%s: Classes: %s" % (inspect.stack()[0][3], ','.join(n for n in classNamesSet)))
     #print("%s: Class includes: %s" % (inspect.stack()[0][3], ','.join(i for i in includeClassSet)))
     missingDependencySet = includeClassSet.difference(classNamesSet)
+    #print(includeClassSet)
+    #print(classNamesSet)
+    #print(missingDependencySet)
     Utilities.myPrint("Missing dependency set: %s" % ','.join(c for c in missingDependencySet))
     for md in missingDependencySet:
         Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_MIS_DEP, CONSTS.FILE_RES)

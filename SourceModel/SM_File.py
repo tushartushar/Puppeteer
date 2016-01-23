@@ -204,18 +204,60 @@ class SM_File:
 
         return exElementList
 
+# TODO: Handle variables
+# Unwrap classes from list
     def getIncludeClasses(self):
-        compiledRE = re.compile(SMCONSTS.INCLUDE_REGEX)
-        compiledNameRE = re.compile(SMCONSTS.INCLUDE_NAME_REGEX)
-        includeClassList = []
-        for match in (compiledRE.findall(self.fileText)):
-            includeClassName = compiledNameRE.findall(match)[0]
-            includeClassText = self.extractResourceText(match)
-            #print("Include class name: %s" % includeClassName)
-            Utilities.myPrint("Extracted include declaration: " + includeClassText)
-            includeResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(includeClassText, includeClassName)
-            includeClassList.append(includeResourceObj)
-        return includeClassList
+        compiledIncludeRE = re.compile(SMCONSTS.DECLARE_INCLUDE_REGEX)
+        compiledResourceRE = re.compile(SMCONSTS.DECLARE_RESOURCE_REGEX)
+        declareClassList = []
+        declareClassName = ""
+        for match in (compiledIncludeRE.findall(self.fileText)):
+            #print(match)
+            declareClassText = match
+            cleanInclude = re.sub(r'^\s*include \[?(.+)\]?\s*$', r'\1', declareClassText)
+            #print("Clean include: %s" % cleanInclude)
+            class_name = r'(?:Class\[)?\'?\:{0,2}([\w\d\:\-_\$]+)\'?\]?'
+            classRE = re.compile(class_name)
+            if ',' in cleanInclude:
+              classes = cleanInclude.split(',')
+              for c in classes:
+                for m in classRE.findall(c):
+                  # Find a variable value in text
+                  if m.startswith('$'):
+                    #print("Variable: %s" % m)
+                    varRE = r'(?:^|\n)\s*\$[\w\d\-_]+\s?=\s?\'?\"?([\w\d\-_]+)\'?\"?\n'
+                    compiledVarRE = re.compile(varRE)
+                    for v in (compiledVarRE.findall(self.fileText)):
+                      #print(v)
+                      declareClassName = v
+                      Utilities.myPrint("Extracted include class declaration: " + declareClassText)
+                      declareResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(declareClassText, declareClassName)
+                      declareClassList.append(declareResourceObj)
+                      break
+                      #print("Variable %s value)
+                  #print("Extracted class name: %s" % m)
+                  else:
+                    declareClassName = m
+                    Utilities.myPrint("Extracted include class declaration: " + declareClassText)
+                    declareResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(declareClassText, declareClassName)
+                    declareClassList.append(declareResourceObj)
+            else:
+              for c in classRE.findall(cleanInclude):
+                #print("Extracted class name: %s" % c)
+                declareClassName = c
+            #print("%s" % includeClassText)
+                Utilities.myPrint("Extracted include class declaration: " + declareClassText)
+                declareResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(declareClassText, declareClassName)
+                declareClassList.append(declareResourceObj)
+        for match in (compiledResourceRE.findall(self.fileText)):
+            #print(match)
+            declareClassText = match
+            declareClassName = declareClassText
+            #print("%s" % includeClassText)
+            Utilities.myPrint("Extracted resource class declaration: " + declareClassText)
+            declareResourceObj = SourceModel.SM_IncludeResource.SM_IncludeResource(declareClassText, declareClassName)
+            declareClassList.append(declareResourceObj)
+        return declareClassList
 
 
     def extractElementText(self, initialString):
@@ -265,7 +307,7 @@ class SM_File:
             return SourceModel.SM_PackageResource.SM_PackageResource(elementText)
         if regex == SMCONSTS.SERVICE_REGEX:
             return SourceModel.SM_ServiceResource.SM_ServiceResource(elementText)
-        if regex == SMCONSTS.INCLUDE_REGEX:
+        if regex == SMCONSTS.DECLARE_INCLUDE_REGEX or regex == SMCONSTS.DECLARE_RESOURCE_REGEX:
             return SourceModel.SM_IncludeResource.SM_IncludeResource(elementText)
         if regex == SMCONSTS.IF_REGEX:
             return SourceModel.SM_IfStmt.SM_IfStmt(elementText)
