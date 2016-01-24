@@ -28,7 +28,7 @@ def detectUnstructuredMod(folder, outputFile):
 def detectTightlyCoupledMod(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectTCMod(fileObj, outputFile)
 
@@ -41,7 +41,7 @@ def detectHairballStrAndWeakendMod(folder, outputFile):
 def detectInsufficientModForm1(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectInsModForm1(fileObj, outputFile)
 
@@ -55,7 +55,7 @@ def detectInsModForm1(fileObj, outputFile):
 def detectInsufficientModForm2(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectInsModForm2(fileObj, outputFile)
 
@@ -75,7 +75,7 @@ def detectInsModForm2(fileObj, outputFile):
 def detectInsufficientModForm3(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectInsModForm3(fileObj, outputFile)
 
@@ -175,11 +175,11 @@ def addGraphResources(node, aModule):
     if os.path.isdir(aModule):
         for root, dirs, files in os.walk(aModule):
             for file in files:
-                if file.endswith(".pp"):
+                if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                     fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                     addResources(fileObj, node)
     else:
-        if aModule.endswith(".pp"):
+        if aModule.endswith(".pp") and not os.path.islink(aModule):
             fileObj = SourceModel.SM_File.SM_File(aModule)
             addResources(fileObj, node)
 
@@ -226,11 +226,11 @@ def addGraphEdgesByNode(node, graph, aModule):
     if os.path.isdir(aModule):
         for root, dirs, files in os.walk(aModule):
             for file in files:
-                if file.endswith(".pp"):
+                if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                     fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                     addEdges(fileObj, node, graph)
     else:
-        if aModule.endswith(".pp"):
+        if aModule.endswith(".pp") and not os.path.islink(aModule):
             fileObj = SourceModel.SM_File.SM_File(aModule)
             addEdges(fileObj, node, graph)
 
