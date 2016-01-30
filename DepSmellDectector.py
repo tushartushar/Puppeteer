@@ -33,8 +33,12 @@ def detectMissingModules(folder, outputFile):
     #print(classNamesSet)
     #print(missingDependencySet)
     Utilities.myPrint("Missing dependency set: %s" % ','.join(c for c in missingDependencySet))
-    for md in missingDependencySet:
-        Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_MIS_DEP, CONSTS.FILE_RES)
+    #for md in missingDependencySet:
+        #Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_MIS_DEP, CONSTS.FILE_RES)
+    with open('missDependencies.puppeteer.txt', 'a+') as f:
+        for md in missingDependencySet:
+            f.write("%s\n" % md)
+            Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_MIS_DEP, CONSTS.FILE_RES)
 
 def detectMissingClassesByInclude(fileObj, outputFile):
     #print("%s" % (inspect.stack()[0][3]))
