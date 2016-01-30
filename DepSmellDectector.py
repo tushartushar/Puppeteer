@@ -18,7 +18,7 @@ def detectMissingModules(folder, outputFile):
     for abspath, dirs, files in os.walk(folder):
         for file in files:
             #print(file)
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(abspath, file)):
                 #print(file)
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(abspath, file))
                 classNames, fileIncludes = detectMissingClassesByInclude(fileObj, outputFile)

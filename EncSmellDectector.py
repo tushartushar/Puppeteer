@@ -9,7 +9,7 @@ def detectSmells(folder, outputFile):
 def detectDeficientEnc(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectDefEnc(fileObj, outputFile)
 

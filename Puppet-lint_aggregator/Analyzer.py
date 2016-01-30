@@ -16,7 +16,7 @@ def analyze(folder, repoName):
 def identifyIncompleteTasks(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 file_ = open(os.path.join(root, file), 'r', errors='ignore')
                 fileText = file_.read()
                 compiledRE = re.compile(r'\btodo\b', flags=re.IGNORECASE)
@@ -29,7 +29,7 @@ def identifyIncompleteTasks(folder, outputFile):
 def identifyImportUsage(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 file_ = open(os.path.join(root, file), 'r', errors='ignore')
                 fileText = file_.read()
                 compiledRE = re.compile(r'\bimport\b')
@@ -39,7 +39,7 @@ def identifyImportUsage(folder, outputFile):
 def identifyComplexExpression(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 detectComplexExpr(os.path.join(root,file), outputFile)
 
 
@@ -55,7 +55,7 @@ def detectComplexExpr(file, outputFile):
 def identifyMissingElse(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 file_ = open(os.path.join(root, file), 'r', errors='ignore')
                 fileText = file_.read()
                 compiledRE = re.compile(r'\belsif .+?\{')

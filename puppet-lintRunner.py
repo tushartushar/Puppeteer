@@ -8,7 +8,7 @@ currentItem = 0
 for item in os.listdir(root):
     currentFolder = os.path.join(root, item)
     if not os.path.isfile(currentFolder):
-        outToFile = " >> " + currentFolder + "/puppet-lint.log"
+        outToFile = " > " + currentFolder + "/puppet-lint.log"
         #call(["puppet-lint", currentFolder, outToFile])
         print("Analyzing: " + currentFolder)
         cmd = 'puppet-lint ' + currentFolder + outToFile

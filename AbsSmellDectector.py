@@ -18,7 +18,7 @@ def detectMultifacetedAbs(folder, outputFile):
 def detectUnnecessaryAbs(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectUnnAbsInClasses(fileObj, outputFile)
                 detectUnnAbsInDefine(fileObj, outputFile)
@@ -27,7 +27,7 @@ def detectUnnecessaryAbs(folder, outputFile):
 def detectImperativeAbs(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectImpAbs(fileObj, outputFile)
 
@@ -61,7 +61,7 @@ def getCpdXmlFile(folder):
 def detectMissingAbs(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectMisAbs(fileObj, outputFile)
 
@@ -74,7 +74,7 @@ def detectMisAbs(fileObj, outputFile):
 def detectMultifacetedAbsForm1(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 checkWithFileResource(fileObj, outputFile)
                 checkWithServiceResource(fileObj, outputFile)
@@ -104,7 +104,7 @@ def checkWithPackageResource(fileObj, outputFile):
 def detectMultifacetedAbsForm2(folder, outputFile):
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".pp"):
+            if file.endswith(".pp") and not os.path.islink(os.path.join(root, file)):
                 fileObj = SourceModel.SM_File.SM_File(os.path.join(root, file))
                 detectMulAbsInClass(fileObj, outputFile)
                 detectMulAbsInDefine(fileObj, outputFile)
