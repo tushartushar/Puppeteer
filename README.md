@@ -22,6 +22,6 @@ The tool supports detection of following design configuration smells:
 8. Unstructured Module
 9. Dense Structure
 10. Deficient Encapsulation
-11. Weekend Modularity
+11. Weakened Modularity
 
 
