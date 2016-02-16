@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Hello"
-repos="$(find /Users/Tushar/Documents/Research/PuppetQuality/popularRepoStore -mindepth 1 -maxdepth 1 -type d)"
+repos="$(find `pwd` -mindepth 1 -maxdepth 1 -type d)"
 for r in $repos;
 do
   echo $r
