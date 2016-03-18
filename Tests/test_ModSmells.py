@@ -1,6 +1,8 @@
 from unittest import TestCase
+
 import SourceModel.SM_File
-import ModSmellDectector
+from SmellDetector import ModSmellDectector
+
 
 class TestModSmells(TestCase):
     def test_detectInsModForm1(self):

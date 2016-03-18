@@ -1,6 +1,8 @@
 from unittest import TestCase
+
 import SourceModel.SM_File
-import EncSmellDectector
+from SmellDetector import EncSmellDectector
+
 
 class TestModSmells(TestCase):
     def test_detectDefEnc(self):

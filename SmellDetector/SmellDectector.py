@@ -1,8 +1,5 @@
-import AbsSmellDectector
-import EncSmellDectector
-import ModSmellDectector
-import DepSmellDectector
-import HieSmellDectector
+from SmellDetector import AbsSmellDectector, ModSmellDectector, HieSmellDectector, DepSmellDectector, EncSmellDectector
+
 
 def detectSmells(folder, outputFile):
     AbsSmellDectector.detectSmells(folder, outputFile)

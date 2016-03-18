@@ -1,4 +1,5 @@
-import Utilities
+from SmellDetector import Utilities
+
 
 def getLCOM(elementList):
     disconnectedElements = 0

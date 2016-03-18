@@ -1,17 +1,18 @@
 import re
-import Utilities
+
+import SourceModel.SM_CaseStmt
 import SourceModel.SM_Constants as SMCONSTS
 import SourceModel.SM_Define
+import SourceModel.SM_Element
 import SourceModel.SM_Exec
+import SourceModel.SM_File
 import SourceModel.SM_FileResource
+import SourceModel.SM_IfStmt
+import SourceModel.SM_LCOM
 import SourceModel.SM_PackageResource
 import SourceModel.SM_ServiceResource
-import SourceModel.SM_CaseStmt
-import SourceModel.SM_IfStmt
 import SourceModel.SM_User
-import SourceModel.SM_Element
-import SourceModel.SM_LCOM
-import SourceModel.SM_File
+
 
 class SM_Class(SourceModel.SM_Element.SM_Element):
     def __init__(self, text, name=None):

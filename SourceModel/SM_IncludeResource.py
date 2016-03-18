@@ -1,6 +1,8 @@
 import re
-import Utilities
+
 import SourceModel.SM_Element
+from SmellDetector import Utilities
+
 
 class SM_IncludeResource(SourceModel.SM_Element.SM_Element):
     def __init__(self, text, name=None):

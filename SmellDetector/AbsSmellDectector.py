@@ -1,8 +1,9 @@
 import os
-import SourceModel.SM_File
-import Utilities
-import Constants as CONSTS
 import re
+
+import SourceModel.SM_File
+from SmellDetector import Constants as CONSTS, Utilities
+
 
 def detectSmells(folder, outputFile):
     detectMultifacetedAbs(folder, outputFile)

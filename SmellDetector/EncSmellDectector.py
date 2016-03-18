@@ -1,7 +1,8 @@
-import Utilities
 import os
+
 import SourceModel.SM_File
-import Constants as CONSTS
+from SmellDetector import Constants as CONSTS, Utilities
+
 
 def detectSmells(folder, outputFile):
     detectDeficientEnc(folder, outputFile)

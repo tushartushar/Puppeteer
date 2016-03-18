@@ -1,4 +1,5 @@
-import Constants as CONSTS
+from SmellDetector import Constants as CONSTS
+
 
 def myPrint(msg):
     if(CONSTS.DEBUG_ON):

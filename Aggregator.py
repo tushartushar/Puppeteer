@@ -1,4 +1,5 @@
-import Constants as CONSTS
+from SmellDetector import Constants as CONSTS
+
 
 def aggregate(folder, name, outFile):
     fileCount = 0

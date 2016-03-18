@@ -1,6 +1,7 @@
 from unittest import TestCase
+
 import SourceModel.SM_File
-import AbsSmellDectector
+from SmellDetector import AbsSmellDectector
 
 
 class TestAbsSmells(TestCase):

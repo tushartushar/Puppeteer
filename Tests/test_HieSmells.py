@@ -1,6 +1,7 @@
 from unittest import TestCase
-import SourceModel.SM_File
-import HieSmellDectector
+
+from SmellDetector import HieSmellDectector
+
 
 class TestHieSmells(TestCase):
     def test_detectBroHierarchy(self):

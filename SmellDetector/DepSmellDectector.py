@@ -1,9 +1,8 @@
-import Utilities
 import os
+
 import SourceModel.SM_File
-import Constants as CONSTS
-import FileOperations
-import inspect
+from SmellDetector import Constants as CONSTS, Utilities
+
 
 def detectSmells(folder, outputFile):
     detectMissingDep(folder, outputFile)

@@ -1,7 +1,7 @@
 import os
-import Analyzer
+
 import Aggregator
-import Constants as CONSTS
+from SmellDetector import Constants as CONSTS, Analyzer
 
 root = CONSTS.REPO_ROOT
 print("Initiating Analyzer...")

@@ -1,8 +1,8 @@
 import os
-import re
-import Constants as CONSTS
+
 import SourceModel.SM_File
-import Utilities
+from SmellDetector import Constants as CONSTS, Utilities
+
 
 def collectSizeMetrics(folder, outputFile):
     totalClasses = 0

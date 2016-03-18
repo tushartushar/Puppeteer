@@ -1,7 +1,8 @@
 from unittest import TestCase
+
 import Aggregator
-import Constants as CONSTS
-import Analyzer
+from SmellDetector import Constants as CONSTS, Analyzer
+
 
 class TestAggregator(TestCase):
     def test_aggregate(self):

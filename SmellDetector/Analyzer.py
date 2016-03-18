@@ -1,8 +1,6 @@
-import FileOperations
-import SizeMetrics
-import Constants as CONSTS
-import SmellDectector
-import Utilities
+import SmellDetector.Constants as CONSTS
+from SmellDetector import SmellDectector, SizeMetrics, FileOperations, Utilities
+
 
 def analyze(folder, repoName):
     outputFile = open(folder + "/" + CONSTS.PUPPETEER_OUT_FILE, 'w')

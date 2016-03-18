@@ -1,12 +1,13 @@
-import Utilities
 import os
-import SourceModel.SM_File
-import Constants as CONSTS
-import FileOperations
+
+import Graph.GR_Constants as GRCONSTS
 import Graph.Graph
 import Graph.GraphNode
 import Graph.Resource
-import Graph.GR_Constants as GRCONSTS
+import SmellDetector.Constants as CONSTS
+import SourceModel.SM_File
+from SmellDetector import FileOperations, Utilities
+
 
 def detectSmells(folder, outputFile):
     detectInsufficientMod(folder, outputFile)
@@ -125,7 +126,7 @@ def detectUnstructuredModForm2(folder, outputFile):
 
 def detectUnsModForm2(folder, outputFile):
     if not getManifestsFolder(folder):
-        Utilities.reportSmell(outputFile,folder, CONSTS.SMELL_UNS_MOD_2, CONSTS.MODULE_MANIFEST)
+        Utilities.reportSmell(outputFile, folder, CONSTS.SMELL_UNS_MOD_2, CONSTS.MODULE_MANIFEST)
 
 #Form 3 - When a module contains other than recommended folders/files
 def detectUnstructuredModForm3(folder, outputFile):

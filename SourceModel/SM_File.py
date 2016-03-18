@@ -1,20 +1,21 @@
 import re
-import Utilities
-import SourceModel.SM_FileResource
-import SourceModel.SM_ServiceResource
-import SourceModel.SM_PackageResource
-import SourceModel.SM_IncludeResource
+
+import SourceModel.SM_CaseStmt
 import SourceModel.SM_Class
-import SourceModel.SM_LCOM
-import SourceModel.SM_Define
 import SourceModel.SM_Constants as SMCONSTS
 import SourceModel.SM_Define
-import SourceModel.SM_Exec
-import SourceModel.SM_CaseStmt
-import SourceModel.SM_IfStmt
-import SourceModel.SM_User
+import SourceModel.SM_Define
 import SourceModel.SM_Element
+import SourceModel.SM_Exec
+import SourceModel.SM_FileResource
+import SourceModel.SM_IfStmt
+import SourceModel.SM_IncludeResource
+import SourceModel.SM_LCOM
 import SourceModel.SM_Node
+import SourceModel.SM_PackageResource
+import SourceModel.SM_ServiceResource
+import SourceModel.SM_User
+from SmellDetector import Utilities
 
 
 class SM_File:

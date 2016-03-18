@@ -1,7 +1,8 @@
-import Utilities
 import os
-import Constants as CONSTS
+
 import SourceModel.SM_File
+from SmellDetector import Constants as CONSTS, Utilities
+
 
 def detectSmells(folder, outputFile):
     detectBrokenHie(folder, outputFile)
