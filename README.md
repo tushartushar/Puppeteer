@@ -24,4 +24,7 @@ The tool supports detection of following design configuration smells:
 10. Deficient Encapsulation
 11. Weakened Modularity
 
+##More Details
+You can find more details about the catalog of configuration smells [here](http://www.tusharma.in/research/a-catalog-of-configuration-smells/) and the paper that describes the catalog and attempts to answer a few research questions concerning the configuration smells [here] (http://www.tusharma.in/research/does-your-configuration-code-smell-msr-2016/).
+
 
