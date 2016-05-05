@@ -9,6 +9,12 @@ Puppeteer is a design configuration smell detection tool for Puppet code.
 * Update the constant REPO_ROOT in Constants.py that represents the folder path where all the Puppet repositories are placed.
 * Execute "Puppeteer.py".
 
+**Optional - Analyze Puppet repos with Puppet-Lint**
+
+* Execute puppet-lintRunner.py after setting the repo root
+* Set the repo root in Puppet-lint_aggregator/PLConstants.py
+* Execute PuppetLintRules.py - It will generate a consilidated summary of the analysis for all the analyzed projects.
+
 ## Supported Design Configuration Smells
 The tool supports detection of following design configuration smells:
 

@@ -7,10 +7,10 @@ from SmellDetector import Constants as CONSTS, Utilities
 
 def detectSmells(folder, outputFile):
     detectMultifacetedAbs(folder, outputFile)
-    detectUnnecessaryAbs(folder, outputFile)
-    detectImperativeAbs(folder, outputFile)
-    detectDuplicateAbs(folder, outputFile)
-    detectMissingAbs(folder, outputFile)
+    #detectUnnecessaryAbs(folder, outputFile)
+    #detectImperativeAbs(folder, outputFile)
+    #detectDuplicateAbs(folder, outputFile)
+    #detectMissingAbs(folder, outputFile)
 
 def detectMultifacetedAbs(folder, outputFile):
     detectMultifacetedAbsForm1(folder, outputFile)
