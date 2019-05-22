@@ -14,10 +14,22 @@ class SM_PackageResource(SourceModel.SM_Element.SM_Element):
         return super().getUsedVariables()
 
     def getPhysicalResourceDeclarationCount(self):
+        pkg_count = 0
         compiledRE = re.compile(r'\'.+\'\W*:|\".+\":')
         tempVar = compiledRE.findall(self.resourceText)
         Utilities.myPrint("Found package declarations: " + str(tempVar))
-        return len(tempVar)
+        pkg_count = len(tempVar)
+        # Find list type package declarations
+        compiledRE = re.compile(r'{\[((\".+?\"),?)+\]:\s*}')
+        result = compiledRE.finditer(self.resourceText)
+        all_pkgs = ""
+        for m in result:
+            all_pkgs = m.group(1)
+        pkgs = all_pkgs.split(',')
+        for pkg in pkgs:
+            Utilities.myPrint("Found package declarations: " + str(pkg))
+        pkg_count += len(pkgs)
+        return pkg_count
 
     def getResourceName(self):
         match = re.search(SMCONSTS.PACKAGE_GROUP_REGEX, self.resourceText)
